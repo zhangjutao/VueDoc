@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS面试题 | 个人博客</title>
+    <meta name="description" content="个人工作中整理的知识库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.2121c18e.css" as="style"><link rel="preload" href="/assets/js/app.f3db9ba0.js" as="script"><link rel="preload" href="/assets/js/2.aaa4c731.js" as="script"><link rel="preload" href="/assets/js/7.d87a3572.js" as="script"><link rel="prefetch" href="/assets/js/10.87e704c3.js"><link rel="prefetch" href="/assets/js/11.8646aa29.js"><link rel="prefetch" href="/assets/js/12.d45963ec.js"><link rel="prefetch" href="/assets/js/13.b79f0480.js"><link rel="prefetch" href="/assets/js/14.014579c6.js"><link rel="prefetch" href="/assets/js/15.de642e2d.js"><link rel="prefetch" href="/assets/js/16.e99f0505.js"><link rel="prefetch" href="/assets/js/17.321b50d7.js"><link rel="prefetch" href="/assets/js/18.297d17aa.js"><link rel="prefetch" href="/assets/js/19.d2a08c96.js"><link rel="prefetch" href="/assets/js/20.200b9822.js"><link rel="prefetch" href="/assets/js/21.7caa24ac.js"><link rel="prefetch" href="/assets/js/22.f5a8315d.js"><link rel="prefetch" href="/assets/js/3.33620d72.js"><link rel="prefetch" href="/assets/js/4.ea945d12.js"><link rel="prefetch" href="/assets/js/5.547d0f5b.js"><link rel="prefetch" href="/assets/js/6.acfb0e47.js"><link rel="prefetch" href="/assets/js/8.da8df6a3.js"><link rel="prefetch" href="/assets/js/9.4a59d320.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2121c18e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Front/" class="nav-link">前端</a></div><div class="nav-item"><a href="/Interview/" class="nav-link router-link-active">面试</a></div><div class="nav-item"><a href="/Java/" class="nav-link">Java</a></div><div class="nav-item"><a href="/WebSecurity/" class="nav-link">网络安全</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Front/" class="nav-link">前端</a></div><div class="nav-item"><a href="/Interview/" class="nav-link router-link-active">面试</a></div><div class="nav-item"><a href="/Java/" class="nav-link">Java</a></div><div class="nav-item"><a href="/WebSecurity/" class="nav-link">网络安全</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Interview/" class="sidebar-link">页面说明</a></li><li><a href="/Interview/js.html" class="sidebar-link">JS面试题</a></li><li><a href="/Interview/html.html" class="sidebar-link">HTML相关</a></li><li><a href="/Interview/css.html" class="active sidebar-link">CSS面试题</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Interview/css.html#_1物理像素的实现-方案1" class="sidebar-link">1物理像素的实现 (方案1)</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#_1物理像素的实现-方案2" class="sidebar-link">1物理像素的实现 (方案2)</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#_1物理像素的实现-方案3-使用伪元素" class="sidebar-link">1物理像素的实现 (方案3 使用伪元素)</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#div水平垂直居中" class="sidebar-link">div水平垂直居中</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#纯css实现三角形" class="sidebar-link">纯CSS实现三角形</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#如何实现移动端rem适配" class="sidebar-link">如何实现移动端rem适配</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#求背景图片左边到-box盒子左边框外侧的距离" class="sidebar-link">求背景图片左边到#box盒子左边框外侧的距离</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#写一个-div-css-布局，左边图片，右边文字，文字环绕图片，外面容器固定宽度，文字不固定。" class="sidebar-link">写一个 div + css 布局，左边图片，右边文字，文字环绕图片，外面容器固定宽度，文字不固定。</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#一个200x200的div在不同分辨率屏幕上下左右居中，用css实现" class="sidebar-link">一个200x200的div在不同分辨率屏幕上下左右居中，用CSS实现</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#写一个左中右布局占满屏幕，其中左，右两块固定宽度200px，中间自适应宽，要求先加载中间块，请写出结构及样式" class="sidebar-link">写一个左中右布局占满屏幕，其中左，右两块固定宽度200px，中间自适应宽，要求先加载中间块，请写出结构及样式</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#简述清除浮动的几种方式" class="sidebar-link">简述清除浮动的几种方式</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#行内元素有哪些？块级元素有哪些？空-void-元素有哪些" class="sidebar-link">行内元素有哪些？块级元素有哪些？空(void)元素有哪些?</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#css选择符有哪些？优先级算法如何计算？" class="sidebar-link">CSS选择符有哪些？优先级算法如何计算？</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#css哪些属性可以继承？" class="sidebar-link">CSS哪些属性可以继承？</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#css3中新增的伪类" class="sidebar-link">CSS3中新增的伪类</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#flex布局的应用场景？" class="sidebar-link">flex布局的应用场景？</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#ios-关闭键盘默认首字母大写" class="sidebar-link">iOS 关闭键盘默认首字母大写</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#div-css布局较table布局有哪些优点？" class="sidebar-link">div+css布局较table布局有哪些优点？</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#当margin-top、padding-top的值是百分比时，分别是如何计算的？" class="sidebar-link">当margin-top、padding-top的值是百分比时，分别是如何计算的？</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#回流与重绘" class="sidebar-link">回流与重绘</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#为什么js用script标签的src引入，而css用link标签的href引入" class="sidebar-link">为什么js用script标签的src引入，而css用link标签的href引入</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#css引入的两种方法link和-import的区别和用法" class="sidebar-link">css引入的两种方法link和@import的区别和用法</a></li><li class="sidebar-sub-header"><a href="/Interview/css.html#请找一个网页，用我们今天讲的api-getclientrects、getboundingclientrect-，-把页面上的所有盒的轮廓rect画到一个canvas元素上。" class="sidebar-link">请找一个网页，用我们今天讲的API(getClientRects、getBoundingClientRect)， 把页面上的所有盒的轮廓Rect画到一个canvas元素上。</a></li></ul></li><li><a href="/Interview/coreCode.html" class="sidebar-link">手写源码系列</a></li><li><a href="/Interview/browser.html" class="sidebar-link">浏览器相关</a></li><li><a href="/Interview/frame.html" class="sidebar-link">前端框架相关</a></li><li><a href="/Interview/miApp.html" class="sidebar-link">小程序公众号</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css面试题"><a href="#css面试题" class="header-anchor">#</a> CSS面试题</h1> <h2 id="_1物理像素的实现-方案1"><a href="#_1物理像素的实现-方案1" class="header-anchor">#</a> 1物理像素的实现 (方案1)</h2> <p><a href="https://segmentfault.com/a/1190000020431752?utm_source=tag-newest" target="_blank" rel="noopener noreferrer">1物理像素<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 这一行不写，由js动态生成 --&gt;</span>
+    <span class="token comment">&lt;!-- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>X-UA-Compatible<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ie=edge<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">function</span> <span class="token function">setViewport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> dpr <span class="token operator">=</span> window<span class="token punctuation">.</span>devicePixelRatio
+            <span class="token keyword">var</span> scale <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> dpr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+            <span class="token keyword">var</span> metaNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'meta'</span><span class="token punctuation">)</span>
+            metaNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'viewport'</span><span class="token punctuation">)</span>
+            metaNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">width=device-width, initial-scale=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,user-scalable=no,maximum-scale=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">,minimum-scale=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>scale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+            document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>metaNode<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        window<span class="token punctuation">.</span>onresize <span class="token operator">=</span> setViewport
+        <span class="token function">setViewport</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.demo</span><span class="token punctuation">{</span>
+            <span class="token property">margin-top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+            <span class="token property">width</span><span class="token punctuation">:</span>400px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span>1px<span class="token punctuation">;</span>
+            <span class="token property">background</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>demo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><hr> <h2 id="_1物理像素的实现-方案2"><a href="#_1物理像素的实现-方案2" class="header-anchor">#</a> 1物理像素的实现 (方案2)</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE&gt;
+&lt;html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>UTF-8<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>viewport<span class="token punctuation">'</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>width=device-width,initial-scale=1,user-scalable=no<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- initial-scale 缩放比 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>1px物理像素的实现(方案1)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 像素比 = 物理像素 / CSS像素 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">*</span> <span class="token punctuation">{</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span>0
+    <span class="token punctuation">}</span>
+    <span class="token selector">#box</span><span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span>0.5rem<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span>0.5rem<span class="token punctuation">;</span>
+      <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid #000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">//像素比 = 物理像素 / CSS像素</span>
+  <span class="token keyword">var</span> dpr <span class="token operator">=</span> window<span class="token punctuation">.</span>devicePixelRatio<span class="token punctuation">;</span>
+  <span class="token comment">//缩放比例 (比如在dpr为2时，1物理像素只需要0.5CSS像素即可呈现，</span>
+  <span class="token comment">//那么需要我们将1CSS像素缩小一半就可以呈现1物理像素。</span>
+  <span class="token comment">//但是CSS像素只能是整数，因此我们只需要在1CSS像素下设置</span>
+  <span class="token comment">//0.5（1/dpr）的缩放比就可以呈现1物理像素)</span>
+  <span class="token keyword">var</span> scale <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>dpr<span class="token punctuation">;</span>
+  <span class="token comment">//获取meta标签,重新声明缩放比即可</span>
+  <span class="token keyword">var</span> metaNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'meta[name=&quot;viewport&quot;]'</span><span class="token punctuation">)</span>
+  metaNode<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">,</span><span class="token string">'width=device-width,initial-scale='</span> <span class="token operator">+</span> sacle <span class="token operator">+</span> <span class="token string">',user-scalable=no'</span><span class="token punctuation">)</span>
+
+  <span class="token comment">//获取屏幕区域的宽度</span>
+  <span class="token keyword">var</span> width <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth
+
+  <span class="token comment">//页面中元素宽度,高度比例需要反向乘回来（即乘 1/scale = dpr）</span>
+  <span class="token keyword">var</span> htmlNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  htmlNode<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> width <span class="token operator">*</span> dpr <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+
+
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h2 id="_1物理像素的实现-方案3-使用伪元素"><a href="#_1物理像素的实现-方案3-使用伪元素" class="header-anchor">#</a> 1物理像素的实现 (方案3 使用伪元素)</h2> <div class="language-html extra-class"><pre class="language-html"><code>...省略
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">*</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span>0
+  <span class="token punctuation">}</span>
+  <span class="token selector">#box</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">//像素比dpr = 物理像素 / CSS像素
+  #box:before</span><span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>#000<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">-webket-min-device-pixel-ratio</span><span class="token punctuation">:</span>2<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">//在最小像素比dpr为2(包含二点几)时，需要在Y方向上缩放（1/dpr）= 0.5
+    #box:before</span><span class="token punctuation">{</span>
+      <span class="token property">transform</span><span class="token punctuation">:</span><span class="token function">scaleY</span><span class="token punctuation">(</span>0.5<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">-webket-min-device-pixel-ratio</span><span class="token punctuation">:</span>3<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">//在最小像素比dpr为3(包含三点几)时，需要在Y方向上缩放（1/dpr）= 0.333
+    #box:before</span><span class="token punctuation">{</span>
+      <span class="token property">transform</span><span class="token punctuation">:</span><span class="token function">scaleY</span><span class="token punctuation">(</span>0.333<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="div水平垂直居中"><a href="#div水平垂直居中" class="header-anchor">#</a> div水平垂直居中</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE&gt;
+&lt;html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>UTF-8<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>使用flex实现元素水平垂直居中(新版本与老版本)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">*</span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token selector">#wrap</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+
+    <span class="token comment">/*方案一*/</span>
+    <span class="token comment">/* position:relative; */</span>
+
+    <span class="token comment">/*方案二*/</span>
+    <span class="token comment">/* position:relative; */</span>
+
+    <span class="token comment">/*方案三  只对新版本浏览器生效*/</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+
+    <span class="token comment">/*方案四  针对老版本浏览器生效*/</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> -webkit-box<span class="token punctuation">;</span>
+    <span class="token property">-webkit-box-pack</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">-webkit-box-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">#wrap .box</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+
+    <span class="token comment">/*方案一*/</span>
+    <span class="token comment">/* position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto; */</span>
+
+    <span class="token comment">/*方案二*/</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span>
+    <span class="token comment">/* margin-left:-100px; */</span>  <span class="token comment">/*向左和上移动自身一半*/</span>
+    <span class="token comment">/* margin-top:-100px; */</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">/*向X轴和Y轴偏移自身宽高的50%*/</span>
+
+
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>wrap<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="custom-block danger"><p class="custom-block-title">补充说明 flex布局</p> <div class="language- extra-class"><pre class="language-text"><code>flex布局；
+flex-direction: 整体布局的排列  
+                row     项目在容器内按行排列
+                row-reverse  与row相同，但是顺序相反
+                column  列
+                column-reverse 与column相同，但是顺序相反
+                initial  设置该属性为它的默认值
+                inherit   从父元素继承该属性
+
+justify-content: 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。
+              flex-start	默认值。项目位于容器的开头
+              flex-end	项目位于容器的结尾
+              center	项目位于容器的中心
+              space-between	项目位于各行之间留有空白的容器内
+              space-around	项目位于各行之前、之间、之后都留有空白的容器内(首、末项目与容器之间的空白为项目之间空白的一半)
+              initial	设置该属性为它的默认值
+              inherit	从父元素继承该属性
+
+align-items : 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式
+            stretch	  默认值。元素被拉伸以适应容器
+            center	  元素位于容器的中心
+            flex-start	元素位于容器的开头
+            flex-end    元素位于容器的结尾
+            baseline  元素位于容器的基线上
+            initial   设置该属性为它的默认值
+            inherit   从父元素继承该属性
+
+align-content  (针对沿主轴排列且有换行的多行项目生效)
+            stretch	  默认值。元素被拉伸以适应容器
+            center	  元素位于容器的中心
+            flex-start	元素位于容器的开头
+            flex-end    元素位于容器的结尾
+            space-between	项目位于各行之间留有空白的容器内
+            space-around	项目位于各行之前、之间、之后都留有空白的容器内(首、末项目与容器之间的空白为项目之间空白的一半)
+            initial	设置该属性为它的默认值
+            inherit	从父元素继承该属性
+
+      作用:
+        会设置自由盒内部所有行作为一个整体在垂直方向排列方式。针对多行作为一个整体在纵轴上的排列方式，该属性对单行无效。
+
+      条件:
+        必须对父元素设置自由盒属性display:flex;，并且设置排列方式为横向排列flex-direction:row;并且设置换行，flex-wrap:wrap;这样这个属性的设置才会起作用。 
+</code></pre></div></div> <h2 id="纯css实现三角形"><a href="#纯css实现三角形" class="header-anchor">#</a> 纯CSS实现三角形</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">*</span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/*方案1*/</span>
+  <span class="token selector">#box</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 100px solid<span class="token punctuation">;</span>
+ 
+    <span class="token comment">/*保留top的border即可得到一个向下的三角形*/</span>
+    <span class="token property">border-top-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token comment">/* border-right-color: blue;
+    border-bottom-color: deeppink;
+    border-left-color: yellow; */</span>
+    <span class="token property">border-right-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+    <span class="token property">border-bottom-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+    <span class="token property">border-left-color</span><span class="token punctuation">:</span>transparent<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/*方案2*/</span>
+  <span class="token comment">/*使用before和after伪元素也可以实现三角*/</span>
+  <span class="token selector">#box</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">#box:after</span><span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">border-left</span><span class="token punctuation">:</span> 10px solid green<span class="token punctuation">;</span>
+    <span class="token property">border-right</span><span class="token punctuation">:</span> 10px solid pink<span class="token punctuation">;</span>
+    <span class="token property">border-bottom</span><span class="token punctuation">:</span> 10px solid grey<span class="token punctuation">;</span>
+    <span class="token property">border-top</span><span class="token punctuation">:</span> 10px solid red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="如何实现移动端rem适配"><a href="#如何实现移动端rem适配" class="header-anchor">#</a> 如何实现移动端rem适配</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE&gt;
+&lt;html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>UTF-8<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>viewport<span class="token punctuation">'</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>width=device-width,initial-scale=1,user-scalable=no<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>如何实现移动端rem适配<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/css<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">*</span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">#box</span><span class="token punctuation">{</span>
+    <span class="token comment">/* width:200px; 
+    height: 200px; */</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0.5rem<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/*
+    html根元素字体大小设置为屏幕区域的宽，rem才可以生效
+  */</span>
+
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/javascript<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token comment">// 1. 获取屏幕区域的宽度</span>
+   <span class="token keyword">var</span> width <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+   <span class="token comment">//获取htmlr</span>
+   <span class="token keyword">var</span> htmlNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//document.documentElement也是html根元素</span>
+   <span class="token comment">//设置字体大小</span>
+   htmlNode<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> width <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="求背景图片左边到-box盒子左边框外侧的距离"><a href="#求背景图片左边到-box盒子左边框外侧的距离" class="header-anchor">#</a> 求背景图片左边到#box盒子左边框外侧的距离</h2> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE&gt;
+&lt;html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>UTF-8<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>viewport<span class="token punctuation">'</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>width=device-width,initial-scale=1,user-scalable=no<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>求背景图片左边到#box盒子左边框外侧的距离<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/css<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">*</span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">#box</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 80px solid blue<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>'img/1.png'<span class="token punctuation">)</span></span><span class="token punctuation">;</span>  
+    <span class="token comment">/*背景图片默认在padding box的左上角，即不考虑padding区域的大小 */</span>
+    <span class="token comment">/*此时距离左边框外侧的距离是border的左侧宽度80px*/</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+    <span class="token property">background-origin</span><span class="token punctuation">:</span> content-box<span class="token punctuation">;</span>  
+    <span class="token comment">/*background-origin -- 背景图片起始源的位置  */</span>
+    <span class="token comment">/*此行样式的意思是将背景图片起始源的位置从padding box的左上角换到content内容区域的左上角，*/</span>
+    <span class="token comment">/*即考虑padding区域的大小. 此时距离左边框外侧的距离是*/</span>
+    <span class="token comment">/*border的左侧宽度加上padding左侧的宽度  80 + 100 = 180px*/</span>
+    <span class="token property">background-position</span><span class="token punctuation">:</span> -50px 0<span class="token punctuation">;</span>
+    <span class="token comment">/*background-position将图片左上角位置水平向左移动50px; 因此距离左边框外侧的距离是 180 - 50 = 130px*/</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>box<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text/javascript<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+ window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ 
+ <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><hr> <h2 id="写一个-div-css-布局，左边图片，右边文字，文字环绕图片，外面容器固定宽度，文字不固定。"><a href="#写一个-div-css-布局，左边图片，右边文字，文字环绕图片，外面容器固定宽度，文字不固定。" class="header-anchor">#</a> 写一个 div + css 布局，左边图片，右边文字，文字环绕图片，外面容器固定宽度，文字不固定。</h2> <p>直接就一个 img，它 float：left，加文字加 p 标签就好了。</p> <hr> <h2 id="一个200x200的div在不同分辨率屏幕上下左右居中，用css实现"><a href="#一个200x200的div在不同分辨率屏幕上下左右居中，用css实现" class="header-anchor">#</a> 一个200x200的div在不同分辨率屏幕上下左右居中，用CSS实现</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token operator">*</span><span class="token punctuation">{</span>margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>padding<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>box<span class="token punctuation">{</span>
+      width<span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+      height<span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//第一种方式</span>
+    <span class="token punctuation">.</span>box<span class="token punctuation">{</span>
+      position<span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+      top<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+      left<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>left<span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>top<span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+      <span class="token comment">//或者使用transform</span>
+      <span class="token comment">// transform:translate(-50%,-50%)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//第二种方式</span>
+    <span class="token punctuation">.</span>box<span class="token punctuation">{</span>
+      position<span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+      top<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      bottom<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      left<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      right<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
+      margin<span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;box&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+</code></pre></div><hr> <h2 id="写一个左中右布局占满屏幕，其中左，右两块固定宽度200px，中间自适应宽，要求先加载中间块，请写出结构及样式"><a href="#写一个左中右布局占满屏幕，其中左，右两块固定宽度200px，中间自适应宽，要求先加载中间块，请写出结构及样式" class="header-anchor">#</a> 写一个左中右布局占满屏幕，其中左，右两块固定宽度200px，中间自适应宽，要求先加载中间块，请写出结构及样式</h2> <p>双飞翼布局</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token operator">*</span><span class="token punctuation">{</span>margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>padding<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>main<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>float<span class="token punctuation">:</span>left<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>container<span class="token punctuation">{</span>
+      width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>content<span class="token punctuation">{</span>
+      background<span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+      margin<span class="token punctuation">:</span><span class="token number">0</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>left<span class="token punctuation">{</span>
+      background<span class="token punctuation">:</span>pink<span class="token punctuation">;</span>
+      width<span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>left<span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>right<span class="token punctuation">{</span>
+      background<span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
+      width<span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>left<span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;main&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>这个container是必须的，本身是<span class="token number">100</span><span class="token operator">%</span>宽度，便于内部的div空出两端的margin给left和right占位<span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;container&quot;</span><span class="token operator">&gt;</span> 
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;content&quot;</span><span class="token operator">&gt;</span>中间<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;left&quot;</span><span class="token operator">&gt;</span>左边<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;right&quot;</span><span class="token operator">&gt;</span>右边<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+</code></pre></div><hr> <h2 id="简述清除浮动的几种方式"><a href="#简述清除浮动的几种方式" class="header-anchor">#</a> 简述清除浮动的几种方式</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    <span class="token operator">*</span><span class="token punctuation">{</span>margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>padding<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>main<span class="token punctuation">{</span>border<span class="token punctuation">:</span><span class="token number">3</span>px solid red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>main<span class="token operator">&gt;</span>div<span class="token punctuation">{</span>
+      float<span class="token punctuation">:</span>left<span class="token punctuation">;</span>
+      width<span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+      height<span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>div1<span class="token punctuation">{</span>
+      background<span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">.</span>div2<span class="token punctuation">{</span>
+      background<span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;main&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;div1&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;div2&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+</code></pre></div><p><img src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAABCkAAALmCAYAAABvmM48AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABa+SURBVHhe7dgxbiNZEAVBHX0PNZjrceStCihTH5VGBPEIEm22Vfn1AQAAAAj4+vvn78fMzMzMzMzM7Hpfn6+vj5mZmZmZmZnZ9UQKMzMzMzMzM0tMpDAzMzMzMzOzxEak+PHTCvvv+51YZvtLMjMzMzMzs9/a9+fHn/nMrrccyna3/SWZmZmZmZnZb+378+PPfGbXWw5lu9v+kszMzMzMzOy39v39v+W5XW45lO1uAAAAvDUur/VQtrsth7LdDQAAgLfG5bUeyna35VC2uwEAAPDWuLzWQ9nuthzKdjcAAADeGpfXeijb3ZZD2e4GAADAW+PyWg9lu9tyKNvdAAAAeGtcXuuhbHdbDmW7GwAAAG+Ny2s9lO1uy6FsdwMAAOCtcXmth7LdbTmU7W4AAAC8NS6v9VC2uy2Hst0NAACAt8bltR7KdrflULa7AQAA8Na4vNZD2e62HMp2NwAAAN4al9d6KNvdlkPZ7gYAAMBb4/JaD2W723Io290AAAB4a1xe66Fsd1sOZbsbAAAAb43Laz2U7W7LoWx3AwAA4K1xea2Hst1tOZTtbgAAALw1Lq/1ULa7LYey3Q0AAIC3xuW1Hsp2t+VQtrsBAADw1ri81kPZ7rYcynY3AAAA3hqX13oo292WQ9nuBgAAwFvj8loPZbvbcijb3QAAAHhrXF7roWx3Ww5luxsAAABvjctrPZTtbsuhbHcDAADgrXF5rYey3W05lO1uAAAAvDUur/VQtrsth7LdDQAAgLfG5bUeyna35VC2uwEAAPDWuLzWQ9nuthzKdjcAAADeGpfXeijb3ZZD2e4GAADAW+PyWg9lu9tyKNvdAAAAeGtcXuuhbHdbDmW7GwAAAG+Ny2s9lO1uy6FsdwMAAOCtcXmth7LdbTmU7W4AAAC8NS6v9VC2uy2Hst0NAACAt8bltR7KdrflULa7AQAA8Na4vNZD2e62HMp2NwAAAN4al9d6KNvdlkPZ7gYAAMBb4/JaD2W723Io290AAAB4a1xe66Fsd1sOZbsbAAAAb43Laz2U7W7LoWx3AwAA4K1xea2Hst1tOZTtbgAAALw1Lq/1ULa7LYey3Q0AAIC3xuW1Hsp2t+VQtrsBAADw1ri81kPZ7rYcynY3AAAA3hqX13oo292WQ9nuBgAAwFvj8loPZbvbcijb3QAAAHhrXF7roWx3Ww5luxsAAABvjctrPZTtbsuhbHcDAADgrXF5rYey3W05lO1uAAAAvDUur/VQtrsth7LdDQAAgLfG5bUeyna35VC2uwEAAPDWuLzWQ9nuthzKdjcAAADeGpfXeijb3ZZD2e4GAADAW+PyWg9lu9tyKNvdAAAAeGtcXuuhbHdbDmW7GwAAAG+Ny2s9lO1uy6FsdwMAAOCtcXmth7LdbTmU7W4AAAC8NS6v9VC2uy2Hst0NAACAt8bltR7KdrflULa7AQAA8Na4vNZD2e62HMp2NwAAAN4al9d6KNvdlkPZ7gYAAMBb4/JaD2W723Io290AAAB4a1xe66Fsd1sOZbsbAAAAb43Laz2U7W7LoWx3AwAA4K1xea2Hst1tOZTtbgAAALw1Lq/1ULa7LYey3Q0AAIC3xuW1Hsp2t+VQtrsBAADw1ri81kPZ7rYcynY3AAAA3hqX13oo292WQ9nuBgAAwFvj8loPZbvbcijb3QAAAHhrXF7roWx3Ww5luxsAAABvjctrPZTtbsuhbHcDAADgrXF5rYey3W05lO1uAAAAvDUur/VQtrsth7LdDQAAgLfG5bUeyna35VC2uwEAAPDWuLzWQ9nuthzKdjcAAADeGpfXeijb3ZZD2e4GAADAW+PyWg9lu9tyKNvdAAAAeGtcXuuhbHdbDmW7GwAAAG+Ny2s9lO1uy6FsdwMAAOCtcXmth7LdbTmU7W4AAAC8NS6v9VC2uy2Hst0NAACAt8bltR7KdrflULa7AQAA8Na4vNZD2e62HMp2NwAAAN4al9d6KNvdlkPZ7gYAAMBb4/JaD2W723Io290AAAB4a1xe66Fsd1sOZbsbAAAAb43Laz2U7W7LoWx3AwAA4K1xea2Hst1tOZTtbgAAALw1Lq/1ULa7LYey3Q0AAIC3xuW1Hsp2t+VQtrsBAADw1ri81kPZ7rYcynY3AAAA3hqX13oo292WQ9nuBgAAwFvj8loPZbvbcijb3QAAAHhrXF7roWx3Ww5luxsAAABvjctrPZTtbsuhbHcDAADgrXF5rYey3W05lO1uAAAAvOXyAgAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAABJECgAAACBBpAAAAAASRAoAAAAgQaQAAAAAEkQKAAAAIEGkAAAAAAI+n39wSjWCk+vu7QAAAABJRU5ErkJggg==" alt="清除浮动">
+可以看到子元素浮动后脱离了父级<br>
+解决方法：</p> <ol><li>给父级元素单独定义高度（height）</li></ol> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token punctuation">.</span>main<span class="token punctuation">{</span>widht<span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">;</span><span class="token punctuation">}</span> 
+</code></pre></div><ul><li>原理：如果父级元素没有定义高度，父元素的高度完全由子元素撑开时，父级div手动定义height，就解决了父级div无法自动获取到高度的问题。</li> <li>优点：简单、代码少、容易掌握。</li> <li>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题。对于响应式布局会有很大影响。</li></ul> <ol start="2"><li>在标签结尾处加空div标签 clear:both</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">.</span>clear<span class="token punctuation">{</span>clear<span class="token punctuation">:</span>both<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;main&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;div1&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;div2&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;clear&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div><ul><li>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度。</li> <li>优点：简单、代码少、浏览器支持好、不容易出现怪问题</li> <li>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，不利于页面的优化。</li></ul> <ol start="3"><li><p>父级div定义 overflow:hidden</p> <ul><li>优点：简单、代码少、浏览器支持好</li> <li>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。（不建议使用此种方式，可能会影响页面元素布局）</li></ul></li> <li><p>父级div定义 伪元素::after 和 zoom (推荐使用)</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">.</span>main<span class="token punctuation">{</span>zoom<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">.</span>main<span class="token punctuation">:</span><span class="token punctuation">:</span>after<span class="token punctuation">{</span>
+  content<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">;</span>
+  display<span class="token punctuation">:</span>block<span class="token punctuation">;</span>
+  clear<span class="token punctuation">:</span>both<span class="token punctuation">;</span>
+  visibility<span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
+  height<span class="token punctuation">:</span><span class="token number">0</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>原理：元素生成伪类的作用和效果相当于方法2中的原理，但是IE8以上和非IE浏览器才支持:after，zoom(IE私有属性)可解决ie6,ie7浮动问题</li> <li>优点：浏览器支持好、不容易出现怪问题，写法是固定的，不理解也可以直接复制使用</li> <li>缺点：css代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。</li></ul> <hr> <h2 id="行内元素有哪些？块级元素有哪些？空-void-元素有哪些"><a href="#行内元素有哪些？块级元素有哪些？空-void-元素有哪些" class="header-anchor">#</a> 行内元素有哪些？块级元素有哪些？空(void)元素有哪些?</h2> <ul><li>行内元素：
+a( 锚点) ,b(粗体(不推荐)) ,span(常用内联容器，定义文本内区块) img(图片) input(输入框) select(项目选择) strong(粗体强调) label(表格标签) cite (引用)code(计算机代码)</li> <li>块级元素：
+div ul(无序列表) ol(有序列表) dl(定义列表) table(表格)form(表单) h1 (一级标题))p(段落)pre(预格式化)</li> <li>空元素(空标签)：即系没有内容的HTML元素
+<ol><li>常见的空元素： br hr img input link meta</li> <li>鲜为人知的空元素 ：area base col command embed keygen param source track wbr</li></ol> <blockquote><blockquote><p>H5中规定自关闭的斜线(/)对空标签无效，即需要自闭合(/)这个小尾巴了，如果要写上也是可以的。</p></blockquote></blockquote></li></ul> <hr> <h2 id="css选择符有哪些？优先级算法如何计算？"><a href="#css选择符有哪些？优先级算法如何计算？" class="header-anchor">#</a> CSS选择符有哪些？优先级算法如何计算？</h2> <table><thead><tr><th>类型</th> <th>选择符</th></tr></thead> <tbody><tr><td>id</td> <td>#</td></tr> <tr><td>class</td> <td>.</td></tr> <tr><td>标签</td> <td>div</td></tr> <tr><td>相邻元素</td> <td>ul+div</td></tr> <tr><td>直系子元素</td> <td>ul&gt;li</td></tr> <tr><td>后代元素</td> <td>ul li</td></tr> <tr><td>通配符</td> <td>*</td></tr> <tr><td>属性</td> <td>a[href='xxx']</td></tr> <tr><td>伪类</td> <td>a:link(未访问的链接) a:visited(已访问的链接) a:hover(当有鼠标悬停在链接上) a:active(被选择的链接)  a:first-child p:focus</td></tr> <tr><td>伪元素</td> <td>a::after  a::before</td></tr></tbody></table> <p>优先级算法:<br>
+!important &gt; 行内样式&gt; ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性</p> <p>css优先级，可以给选择器分配权值：</p> <ol><li>id选择器的权值为100</li> <li>class、属性和伪类选择器的权值为10</li> <li>标签选择器的权值为1
+特殊！important，优先级最高</li></ol> <p>权值较大的优先级越高<br>
+比较样式时，将对应的选择器权值相加，大的优先级高
+权值相同的，根据从上往下的原则，后定义的优先级高</p> <hr> <h2 id="css哪些属性可以继承？"><a href="#css哪些属性可以继承？" class="header-anchor">#</a> CSS哪些属性可以继承？</h2> <ul><li><p>有继承性的属性</p> <ol><li>字体系列属性
+<ul><li><div class="language-js extra-class"><pre class="language-js"><code>  font：组合字体        
+  font<span class="token operator">-</span>family：规定元素的字体系列        
+  font<span class="token operator">-</span>weight：设置字体的粗细        
+  font<span class="token operator">-</span>size：设置字体的尺寸        
+  font<span class="token operator">-</span>style：定义字体的风格        
+  font<span class="token operator">-</span>variant：设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为
+  <span class="token operator">...</span>
+</code></pre></div></li></ul></li> <li>文本系列属性
+<ul><li><div class="language-js extra-class"><pre class="language-js"><code>color：文本颜色
+line<span class="token operator">-</span>height：行高        
+text<span class="token operator">-</span>align：文本水平对齐        
+text<span class="token operator">-</span>indent：文本缩进        
+word<span class="token operator">-</span>spacing：增加或减少单词间的空白（即字间隔）        
+letter<span class="token operator">-</span>spacing：增加或减少字符间的空白（字符间距）        
+text<span class="token operator">-</span>transform：控制文本大小写        
+direction：规定文本的书写方向        
+</code></pre></div></li></ul></li> <li>元素可见性：visibility</li> <li>表格布局属性：caption-side、border-collapse、border-spacing、        empty-cells、table-layout</li> <li>列表属性：list-style-type、list-style-image、list-style-position、list-style</li> <li>生成内容属性：quotes</li> <li>光标属性：cursor</li> <li>页面样式属性：page、page-break-inside、windows、orphans</li> <li>声音样式属性：speak、speak-punctuation、speak-numeral、speak-header、  speech-rate、volume、voice-family、pitch、pitch-range、  stress、richness、、azimuth、elevation</li></ol></li> <li><p>所有元素可以继承的属性：1、元素可见性：visibility、opacity        2、光标属性：cursor</p></li> <li><p>内联元素可以继承的属性: 1、字体系列属性        2、除text-indent、text-align之外的文本系列属性</p></li> <li><p>块级元素可以继承的属性: 1、text-indent、text-align</p></li> <li><p>无继承的属性：</p> <ol><li>display</li> <li>文本属性：vertical-align：text-decoration：text-shadow： white-space：unicode-bidi：
+3，盒子模型的属性:宽度、高度、内外边距、边框等</li> <li>背景属性：背景图片、颜色、位置等</li> <li>定位属性：浮动、清除浮动、定位position等</li> <li>生成内容属性:content、counter-reset、counter-increment</li> <li>轮廓样式属性:outline-style、outline-width、outline-color、outline</li> <li>页面样式属性:size、page-break-before、page-break-after</li></ol></li></ul> <hr> <h2 id="css3中新增的伪类"><a href="#css3中新增的伪类" class="header-anchor">#</a> CSS3中新增的伪类</h2> <ol><li>伪类与伪元素 -- 单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。<br>
+CSS伪类：用于向某些选择器添加特殊的效果。<br>
+CSS伪元素：用于将特殊的效果添加到某些选择器。伪元素代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中</li></ol> <table><thead><tr><th>伪元素</th> <th>作用</th></tr></thead> <tbody><tr><td>::first-letter</td> <td>将样式添加到文本的首字母</td></tr> <tr><td>::first-line</td> <td>将样式添加到文本的首行</td></tr> <tr><td>::before</td> <td>在某元素之前插入某些内容</td></tr> <tr><td>::after</td> <td>在某元素之后插入某些内容</td></tr></tbody></table> <ol start="2"><li>CSS3新增伪类</li></ol> <table><thead><tr><th>新增伪类</th> <th>作用</th></tr></thead> <tbody><tr><td>p:first-of-type</td> <td>选择属于其父元素的首个p元素的每个p元素。</td></tr> <tr><td>p:last-of-type</td> <td>选择属于其父元素的最后p元素的每个p元素。</td></tr> <tr><td>p:only-of-type</td> <td>选择属于其父元素唯一的p元素的每个p元素。</td></tr> <tr><td>p:only-child</td> <td>选择属于其父元素唯一的子元素的每个p元素。</td></tr> <tr><td>p:nth-child(n)</td> <td>选择属于其父元素的第n个子元素的每个p元素。</td></tr> <tr><td>p:nth-last-child(n)</td> <td>选择属于其父元素的倒数第n个子元素的每个p元素。</td></tr> <tr><td>p:nth-of-type(n)</td> <td>选择属于其父元素第n个p元素的每个p元素。</td></tr> <tr><td>p:nth-last-of-type(n)</td> <td>选择属于其父元素倒数第n个p元素的每个p元素。</td></tr> <tr><td>p:last-child</td> <td>选择属于其父元素最后一个子元素的每个p元素。</td></tr> <tr><td>p:empty</td> <td>选择没有子元素的每个p元素（包括文本节点）。</td></tr> <tr><td>p:target</td> <td>选择当前活动的p元素。</td></tr> <tr><td>:not(p)</td> <td>选择非p元素的每个元素。</td></tr> <tr><td>:enabled</td> <td>控制表单控件的可用状态。</td></tr> <tr><td>:disabled</td> <td>控制表单控件的禁用状态。</td></tr> <tr><td>:checked</td> <td>单选框或复选框被选中。</td></tr></tbody></table> <hr> <h2 id="flex布局的应用场景？"><a href="#flex布局的应用场景？" class="header-anchor">#</a> flex布局的应用场景？</h2> <p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener noreferrer">flex布局是什么<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ol><li>基本网格等分布局<br>
+为每个项目设定flex: 1;</li> <li>百分比网格布局<br>
+为每个项目设定flex: 1;然后再为想要设定百分比的项目设定flex: 0 0 %;</li> <li>圣杯布局<br> <img src="/assets/img/shengbei.5fa43739.png" alt="shengbei">
+上面的 “上下固定高度、中间自适应” + “左右固定宽度，中间自适应的”的组合方式。这里需要注意的一点是，作为 flex 容器内成员的 DOM 元素，仍旧可以通过设置 display: flex; 而变成 flex 容器，</li> <li>输入框的布局<br>
+实现输入框前方添加提示，后方添加按钮，为输入框添加flex: 1;就行了。</li> <li>悬挂式布局<br>
+交叉轴设定align-items: flex-start;使得左对齐，然后为文字设定flex: 1;</li> <li>固定的底栏<br>
+更换主轴方向flex-direction: column，设定最小高度min-height: 100vh，然后中间内容flex: 1;</li> <li>流式布局<br>
+设定换行，再设定flex: 0 0 %;控制每行数量。</li></ol> <hr> <h2 id="ios-关闭键盘默认首字母大写"><a href="#ios-关闭键盘默认首字母大写" class="header-anchor">#</a> iOS 关闭键盘默认首字母大写</h2> <p>input中加入这个属性autocapitalize=&quot;off&quot;
+<input type="text" autocapitalize="off"></p> <hr> <h2 id="div-css布局较table布局有哪些优点？"><a href="#div-css布局较table布局有哪些优点？" class="header-anchor">#</a> div+css布局较table布局有哪些优点？</h2> <ol><li>div+css布局符合W3C标准(W3C标准提出网页由三部分组成：结构（Structure）、表现（Presentation）和行为（Behavior）), 结构清晰明了，结构、样式和行为分离，带来足够好的可维护性。</li> <li>div+css布局易于维护和改版。</li> <li>div+css布局更利于seo优化</li> <li>table布局加载网页时，必须整体加载完，降低了网页的呈现速度，而div+css布局是边加载边显示的。</li></ol> <hr> <h2 id="当margin-top、padding-top的值是百分比时，分别是如何计算的？"><a href="#当margin-top、padding-top的值是百分比时，分别是如何计算的？" class="header-anchor">#</a> 当margin-top、padding-top的值是百分比时，分别是如何计算的？</h2> <p>可以对元素的margin设置百分数，百分数是相对于父元素的<font color="red">width</font>计算，不管是margin-top/margin-bottom还是margin-left/margin-right。（padding同理）</p> <p>如果没有为元素声明width，在这种情况下，元素框的总宽度包括外边距取决于父元素的width，这样可能得到“流式”页面，即元素的外边距会扩大或缩小以适应父元素的实际大小。如果对这个文档设置样式，使其元素使用百分数外边距，当用户修改浏览窗口的宽度时，外边距会随之扩大或缩小。</p> <p>为什么margin-top/margin-bottom的百分数也是相对于width而不是height呢？</p> <p>CSS权威指南中的解释：<br>
+我们认为，正常流中的大多数元素都会足够高以包含其后代元素（包括外边距），如果一个元素的上下外边距是父元素的height的百分数，就可能导致一个无限循环，父元素的height会增加，以适应后代元素上下外边距的增加，而相应的，上下外边距因为父元素height的增加也会增加，如果循环。</p> <hr> <h2 id="回流与重绘"><a href="#回流与重绘" class="header-anchor">#</a> 回流与重绘</h2> <h3 id="回流"><a href="#回流" class="header-anchor">#</a> 回流</h3> <ul><li>当render tree中的一部分(或全部)因为元素的<font color="red">规模尺寸</font>，<font color="red">布局</font>，<font color="red">隐藏</font>等改变而需要重新构建。这就成为<font color="red">回流(reflow)</font></li> <li>当<font color="red">页面布局</font>和<font color="red">几何属性</font>改变时就需要回流</li> <li>触发页面重布局(回流)的属性
+<ol><li>盒子模型相关属性
+<ul><li>width、height、padding、margin、display、border-width、border、min-height</li></ul></li> <li>定位属性及浮动
+<ul><li>top、bottom、left、right、position、float、clear</li></ul></li> <li>改变节点内部文字结构
+<ul><li>text-align、overfloe、font-weight、font-family、line-height、vertical-align、white-space、font-size</li></ul></li></ol></li></ul> <h3 id="重绘"><a href="#重绘" class="header-anchor">#</a> 重绘</h3> <ul><li>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的<font color="red">外观、风格</font>，而不会影响布局的，比如background-color、clor等，就成为重绘</li> <li>回流必将引起重绘，而重绘不一定会引起回流</li> <li>只触发重绘的属性
+<ul><li>color、border-style、border-redius、visibility、text-decoration、background、background-image、background-position、background-repeat、background-size、outline-color、outline、outline-style、outline-width、box-shadow</li></ul></li></ul> <h3 id="具体优化点"><a href="#具体优化点" class="header-anchor">#</a> 具体优化点</h3> <ol><li>用translate替代top（top会引发回流）</li> <li>用opacity替代visibility(visibility会触发重绘)</li> <li>用预先定义好的class替代一条一条修改DOM样式</li> <li>把DOM离线后修改（比如：先把DOM给display:none[有一次reflow],然后修改多次样式，再将它显示出来）</li> <li>不要把DOM节点的属性值放在循环里当成循环里的变量</li> <li>不要使用table布局，可能很小的一个改动会造成整个table的重新布局</li> <li>动画实现的速度的选择</li> <li>对于动画新建图层（will-change:transform或者transform:translateZ(0)）
+9 启用GPU硬件加速（transform3D(0,0,0)）</li></ol> <hr> <h2 id="为什么js用script标签的src引入，而css用link标签的href引入"><a href="#为什么js用script标签的src引入，而css用link标签的href引入" class="header-anchor">#</a> 为什么js用script标签的src引入，而css用link标签的href引入</h2> <p>w3c最初的设计中&lt;script&gt;标签也没有src属性，使用 &lt;link rel=&quot;...&quot; href=&quot;...&quot;&gt; 来引入当前文档外部的资源，如：父文档，翻译，或者层叠样式表等。&lt;link rel=&quot;&quot; href=&quot;&quot; meidia=&quot;&quot;&gt; 元素规定了当前文档和外部资源之间的关系，它常用来引入外部的样式表，我们可以通过rel属性设置为stylesheet来使用。后来为&lt;script&gt;添加了src属性。</p> <p>href是引用和页面关联，是在当前元素和引用资源之间建立联系，src表示引用资源，表示替换当前元素，用在img，script，iframe上，src是页面内容不可缺少的一部分。</p> <p>&lt;script src=&quot;js.js&quot;&gt;&lt;/script&gt;当浏览器解析到这一句的时候会暂停其他资源的下载和处理，直至将该资源加载，编译，执行完毕，图片和框架等元素也是如此，类似于该元素所指向的资源嵌套如当前标签内，这也是为什么要把放在底部而不是头部。</p> <p>&lt;link href=&quot;common.css&quot; rel=&quot;stylesheet&quot;/&gt;当浏览器解析到这一句的时候会识别该文档为css文件，会下载并且不会停止对当前文档的处理，这也是为什么建议使用link方式来加载css而不是使用@import。</p> <hr> <h2 id="css引入的两种方法link和-import的区别和用法"><a href="#css引入的两种方法link和-import的区别和用法" class="header-anchor">#</a> css引入的两种方法link和@import的区别和用法</h2> <p>link语法结构:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>link href<span class="token operator">=</span><span class="token string">&quot;外部CWSS文件的URL路径&quot;</span> rel<span class="token operator">=</span><span class="token string">&quot;stylesheet&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;text/css&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><p>link标签通过URL路径引入外部的CSS文件到HTML中，是一种HTML标签，属于书写HTML的语法，只能放在HTML源代码中使用</p> <p>@import语法结构:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">&quot;text/css&quot;</span><span class="token operator">&gt;</span>
+  @<span class="token keyword">import</span> <span class="token operator">+</span> 空格 <span class="token operator">+</span> <span class="token function">url</span><span class="token punctuation">(</span>外部<span class="token constant">CSS</span>文件<span class="token constant">URL</span>路径地址<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+</code></pre></div><p>@import是在样式表定义中再引入外部的CSS文件，相当于一种样式，属于书写CSS的语法。</p> <p>两者的区别</p> <div class="custom-block tip"><p class="custom-block-title">区别</p> <p>区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。</p> <p>区别2：link引用CSS时，在页面载入时同时加载；@import需要页面完全载入后才加载。</p> <p>区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1中提出的，低版本的浏览器不支持。</p> <p>区别4：link支持使用JavaScript控制DOM去改变样式；@import不支持这样的操作（JavaScript可以获取link标签元素，但获取不到@import，因为@import只是一种CSS语法）。</p></div> <hr> <h2 id="请找一个网页，用我们今天讲的api-getclientrects、getboundingclientrect-，-把页面上的所有盒的轮廓rect画到一个canvas元素上。"><a href="#请找一个网页，用我们今天讲的api-getclientrects、getboundingclientrect-，-把页面上的所有盒的轮廓rect画到一个canvas元素上。" class="header-anchor">#</a> 请找一个网页，用我们今天讲的API(getClientRects、getBoundingClientRect)， 把页面上的所有盒的轮廓Rect画到一个canvas元素上。</h2> <ol><li>方式一</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">void</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>offsetWidth<span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">;</span>
+  
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position <span class="token operator">=</span> <span class="token string">'absolute'</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>bottom <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>zIndex <span class="token operator">=</span> <span class="token string">'9999'</span><span class="token punctuation">;</span>
+  
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">draw</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token function">getAllRects</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span>rects</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span>strokeStyle <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
+    window<span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>_draw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">function</span> <span class="token function">_draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">let</span> <span class="token punctuation">{</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">}</span> <span class="token operator">=</span> rects<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      ctx<span class="token punctuation">.</span><span class="token function">strokeRect</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> rects<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span><span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>_draw<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//HTML5新增的定时器。用法与settimeout很相似，只是不需要设置时间间隔而已。</span>
+      <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'%cDONE'</span><span class="token punctuation">,</span><span class="token string">'background-color:green;color:white,padding:0.3em 0.5em;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">function</span> <span class="token function">getAllRects</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> allElements <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> rects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span>htmlX<span class="token punctuation">,</span> y<span class="token punctuation">:</span>htmlY<span class="token punctuation">}</span> <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    allElements<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> eachElRects <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span><span class="token function">getClientRects</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">rect</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> rect<span class="token punctuation">.</span>width <span class="token operator">||</span> rect<span class="token punctuation">.</span>height
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">rect</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          x<span class="token punctuation">:</span>rect<span class="token punctuation">.</span>x <span class="token operator">-</span> htmlX<span class="token punctuation">,</span>
+          y<span class="token punctuation">:</span>rect<span class="token punctuation">.</span>y <span class="token operator">-</span> htmlY<span class="token punctuation">,</span>
+          width<span class="token punctuation">:</span>rect<span class="token punctuation">.</span>width<span class="token punctuation">,</span>
+          height<span class="token punctuation">:</span>rect<span class="token punctuation">.</span>height
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      rects<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>eachElRects<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> rects<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/assets/img/rect_sample.964853cd.png" alt="rect_sample.png"></p> <div class="custom-block tip"><p class="custom-block-title">requestAnimationFrame</p> <p><a href="https://www.cnblogs.com/xiaohuochai/p/5777186.html" target="_blank" rel="noopener noreferrer">requestAnimationFrame<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>采用系统时间间隔，保持最佳绘制效率，不会因为间隔时间过短，造成过度绘制，增加开销；也不会因为间隔时间太长，使用动画卡顿不流畅，让各种网页动画效果能够有一个统一的刷新机制，从而节省系统资源，提高系统性能，改善视觉效果</p></div> <ol start="2"><li>方式二</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">void</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  canvas<span class="token punctuation">.</span>width	<span class="token operator">=</span>document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>height	<span class="token operator">=</span>	document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>height<span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>position<span class="token operator">=</span><span class="token string">&quot;absolute&quot;</span><span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border<span class="token operator">=</span><span class="token string">'1px	solid	red'</span><span class="token punctuation">;</span> 
+  canvas<span class="token punctuation">.</span>style<span class="token punctuation">.</span>zIndex <span class="token operator">=</span> <span class="token string">'9999'</span><span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span>	ctx	<span class="token operator">=</span>	canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token keyword">function</span>	<span class="token function">travaldom</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span><span class="token punctuation">{</span>	
+    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>tagName	<span class="token operator">&amp;&amp;</span>	root<span class="token punctuation">.</span>tagName	<span class="token operator">!==</span><span class="token string">'text'</span>	<span class="token operator">&amp;&amp;</span>	root<span class="token punctuation">.</span>tagName<span class="token operator">!==</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+      <span class="token keyword">const</span>	startX	<span class="token operator">=</span>	root<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span> 
+      <span class="token keyword">const</span>	startY	<span class="token operator">=</span>	root<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>y<span class="token punctuation">;</span> 
+      <span class="token keyword">const</span>	width	<span class="token operator">=</span>	root<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<span class="token punctuation">;</span> 
+      <span class="token keyword">const</span>	height	<span class="token operator">=</span>	root<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>height<span class="token punctuation">;</span> 
+      ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      ctx<span class="token punctuation">.</span>lineWidth<span class="token operator">=</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">;</span> 
+      ctx<span class="token punctuation">.</span>strokeStyle<span class="token operator">=</span><span class="token string">&quot;blue&quot;</span><span class="token punctuation">;</span> 
+      ctx<span class="token punctuation">.</span><span class="token function">rect</span><span class="token punctuation">(</span>startX<span class="token punctuation">,</span>startY<span class="token punctuation">,</span>width<span class="token punctuation">,</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      ctx<span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    root<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token function">travaldom</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token function">travaldom</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/assets/img/rect_sample2.db69f14a.png" alt="rect_sample2.png"></p> <hr></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Interview/html.html" class="prev">HTML相关</a></span> <span class="next"><a href="/Interview/coreCode.html">手写源码系列</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3db9ba0.js" defer></script><script src="/assets/js/2.aaa4c731.js" defer></script><script src="/assets/js/7.d87a3572.js" defer></script>
+  </body>
+</html>
