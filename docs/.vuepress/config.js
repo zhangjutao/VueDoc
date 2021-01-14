@@ -1,7 +1,6 @@
 module.exports = {
   title: '个人博客',
   description: '个人工作中整理的知识库',
-  dest: 'public',
   themeConfig: { //顶部导览nav(自带简易搜索功能)
     displayAllHeaders: false, // 默认值：false 显示所有页面的标题链接
     nav: [

@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false
       - name: install and build
         run:
-          npm cli
+          npm install
           npm run docs:build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9  // 引用别人的部署插件
