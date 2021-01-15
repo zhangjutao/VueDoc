@@ -3229,7 +3229,7 @@ function multiRequest(urls = [], maxNum) {
 ```
 ---
 
-# JS实现将数字转成千分位的方法小结【5种方式】
+## JS实现将数字转成千分位的方法小结【5种方式】
 [参考链接](https://www.jb51.net/article/99675.htm)
 * 利用正则的零宽度正预测先行断言(?=exp);它断言自身出现的位置的后面能匹配表达式exp
 ```js

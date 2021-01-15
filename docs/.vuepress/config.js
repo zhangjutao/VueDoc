@@ -21,6 +21,7 @@ module.exports = {
         'browser',
         'frame',
         'miApp',
+        'ts',
       ],
       '/Front/':[
         '',
