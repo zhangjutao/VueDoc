@@ -3228,3 +3228,62 @@ function multiRequest(urls = [], maxNum) {
 }
 ```
 ---
+
+# JS实现将数字转成千分位的方法小结【5种方式】
+[参考链接](https://www.jb51.net/article/99675.htm)
+* 利用正则的零宽度正预测先行断言(?=exp);它断言自身出现的位置的后面能匹配表达式exp
+```js
+var str = "87463297";
+console.info(str.replace(/\d{1,3}(?=(\d{3})+$)/g,function(s){
+  return s+','
+}) )
+console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,'$1,')) // 出错！！！297,297,297
+```
+
+* 利用正则的子项来替换
+```js
+console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,function($1){
+  return $1=$1+','
+}))
+console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,'$1,')) // 正常！！！
+```
+
+* 先将字符串转成数组，利用reverse反转数组后每3个数字后添加一个分隔符“,”，到字符串末尾除外，之后转回字符串
+```js
+// 利用字符串和数组方法
+console.info( str.split("").reverse().join("").replace(/(\d{3})+?/g,function(s){
+  return s+",";
+}).replace(/,$/,"").split("").reverse().join("") )
+```
+
+* 利用while循环拼接字符串每隔3个数字加一个分隔符，首尾不加
+```js
+// 利用循环拼接字符串每隔3个加一个分隔符
+var result="",
+  index = 0,
+  len = str.length-1;
+while(len>=0) {
+  index%3===0&&index!==0 ? result+=","+str[len] : result+=str[len];
+  len--;
+  index++;
+};
+result=result.split("").reverse().join("");
+console.info(result);
+```
+
+* 利用while循环在数组里push分隔符，首尾不加
+```js
+// 利用while循环在数组里push分隔符
+var result="",
+  index = 0,
+  len = str.length,
+  i = len-1,
+  arr = str.split("");
+while(len-index>0){
+  len>=index&&len-index!==len && arr.splice(len-index,0,",");
+  index+=3;
+  i-=4;
+};
+console.log(arr.join(""));
+```
+---
