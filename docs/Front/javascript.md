@@ -131,3 +131,40 @@ then中return Promise必须是在then函数的作用域中return，不能在其�
 :::
 
 ---
+## CommonJS规范，以及exports、module.exports和export、export default区别
+[参考链接](https://blog.csdn.net/qq_38801354/article/details/78024680)
+
+1. module.exports导出的是值的拷贝，exprot导出的是值的引用
+2. module.exports是动态引入的，可以在条件语句中使用导入；export是静态导入，只能在文件顶部导入(静态引入方便进行模块的静态分析，构建依赖树，能去除冗余的模块或变量,能使用tree shaking，而动态引入没法在代码编译打包时进行分析，因此无法使用tree shaking
+3. module.exports导出一个对象；export可以导出多个
+---
+
+## module.exports中的module对象包含哪些属性？
+::: tip module对象属性
+* module.id 模块的识别符，通常是带有绝对路径的模块文件名
+* module.filename 模块的文件名，带有绝对路径
+* module.loaded 返回一个布尔值，表示模块是否已经完成加载
+* module.parent 返回一个对象，表示调用该模块的模块
+* module.children 返回一个数组，表示该模块要用到的其他模块
+* module.exports 表示模块对外输出的值
+:::
+```js
+Module {
+  id: '.',//这里是相对路径
+  exports: { '$': { addx: [Function: addx], x: 1 } },
+  parent: null,
+  filename: 'E:\\html&css\\test2.js',//这里是绝对路径
+  loaded: false,
+  children: 
+   [ Module {
+       id: 'E:\\html&css\\test.js',
+       exports: [Object],
+       parent: [Circular],
+       filename: 'E:\\html&css\\test.js',
+       loaded: true,
+       children: [],
+       paths: [Object] } ],
+  paths: [ 'E:\\html&css\\node_modules', 'E:\\node_modules' ] 
+ }
+```
+---
