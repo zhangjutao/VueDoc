@@ -30,6 +30,7 @@ module.exports = {
         'css',
         'tool',
         'internet',
+        'ts',
       ]
     },
   },
