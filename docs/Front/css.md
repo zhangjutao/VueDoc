@@ -85,3 +85,45 @@
       ```
 
 ---
+
+## CSS 中 link 和@import 的区别是
+* link 属于 HTML 标签，而@import 是 CSS 提供的
+* 页面被加载时，link会同时被加载，而@important被引用的CSS会等到引用它的CSS文件被加载完再加载; 如果@import直接写在style标签中，则@import引用的CSS会等到页面全部被下载完再被加载
+* import 只在 IE5 以上才能识别，而 link 是 HTML 标签，无兼容问题;
+* link 方式的样式的权重 高于@import 的权重
+
+---
+
+## position:absolute 和 float 属性的异同
+* 共同点：对内联元素设置 float 和 absolute 属性，可以让元素脱离文档流，并且可以设置其宽高
+
+* 不同点：float 仍会占据位置，absolute 会覆盖文档流中的其他元素
+
+---
+
+## CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3 新增伪类有那些？
+
+1. id 选择器（ # myid）
+2. 类选择器（.myclassname）
+3. 标签选择器（div, h1, p）
+4. 相邻选择器（h1 + p）
+5. 子选择器（ul > li）
+6. 后代选择器（lia）
+7. 通配符选择器（ * ）
+8. 属性选择器（a[rel = "external"]）
+9. 伪类选择器（a: hover, li:nth-child）
+
+优先级：!important > 行内样式 > ID选择器 > 类选择器 > 标签 > 通配符 > 继承 > 浏览器默认属性
+
+CSS3 新增伪类举例:
+```js
+(1) p:first-of-type 选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
+(2) p:last-of-type 选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
+(3) p:only-of-type 选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
+(4) p:only-child 选择属于其父元素的唯一子元素的每个 <p> 元素。
+(5) p:nth-child(2) 选择属于其父元素的第二个子元素的每个 <p> 元素。
+(6) :enabled :disabled 控制表单控件的禁用状态。
+(7) :checked 单选框或复选框被选中。
+```
+
+---
