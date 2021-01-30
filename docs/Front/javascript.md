@@ -119,10 +119,10 @@ new Promise(function(resolve,reject){
     结果：
        立即输出   start
        两秒输出   hello
-       三秒输出   flase
+       接着输出   flase
 */
 ```
-::: tip 
+::: tips
 根据上面的运行结果来看，如果在一个then（）中没有返回一个新的promise，则return 什么下一个then就接受什么，在上面的实例代码中return的是false，下一个then中接受到的value就是false，如果then中没有return，则默认return的是undefined.
 :::
 
@@ -168,3 +168,73 @@ Module {
  }
 ```
 ---
+
+
+## XMLHttpRequest使用方式
+属性  
+* readyState  
+HTTP 请求的状态.当一个 XMLHttpRequest 初次创建时，这个属性的值从 0 开始，直到接收到完整的 HTTP 响应，这个值增加到 4。    
+
+| 状态 | 名称 | 描述 |
+| ------ | ------ | ------ |
+| 0 | Uninitialized | 初始化状态。XMLHttpRequest 对象已创建或已被 abort() 方法重置。 |
+| 1 | Open | open() 方法已调用，但是 send() 方法未调用。请求还没有被发送。 |
+| 2 | Sent | send() 方法已调用，HTTP 请求已发送到 Web 服务器。未接收到响应。 |
+| 3 | Receiving | 所有响应头部都已经接收到。响应体开始接收但未完成。 |
+| 4 | Loaded | HTTP 响应已经完全接收 |
+
+* responseText
+* responseXML
+* status: 由服务器返回的 HTTP 状态代码
+* statusText: 描述了HTTP状态代码文本
+
+方法
+* abort()： 
+    取消当前响应，关闭连接并且结束任何未决的网络活动；把 XMLHttpRequest 对象重置为 readyState 为 0 的状态，并且取消所有未决的网络活动  
+* getAllResponseHeaders()  
+    把 HTTP 响应头部作为未解析的字符串返回  
+* getResponseHeader()  
+    返回指定的 HTTP 响应头部的值。其参数是要返回的 HTTP 响应头部的名称  
+* open()  
+    初始化 HTTP 请求参数，例如 URL 和 HTTP 方法，但是并不发送请求  
+* send()  
+    发送 HTTP 请求，使用传递给 open() 方法的参数，以及传递给该方法的可选请求体；  
+    如果通过调用 open() 指定的 HTTP 方法是 POST 或 PUT，body 参数指定了请求体, 作为一个字符串或者 Document 对象。  
+    如果请求体不是必须的话，这个参数就为 null  
+    ```js
+        send(body);
+    ```
+* setRequestHeader()  
+    向一个打开但未发送的请求设置或添加一个 HTTP 请求头  
+
+
+```js
+<link rel="stylesheet" type="text/css" href="theme.css" >
+<script type="text/javascript">
+var xmlhttp = null;
+if(window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+} else if(window.ActiveXObject) {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+if (xmlhttp != null) {
+    xmlhttp.open('GET', url, true); // 第三个参数是Async 
+    //该参数规定请求是否异步处理。True 表示脚本会在 send() 方法之后继续执行，而不等待来自服务器的响应。
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4) {
+            if(xmlhttp.status == 200) {
+                var xmlDoc = xmlhttp.responseText
+                console.log(xmlDoc);
+                // 将上一步请求返回的数据当成参数发送到下一个请求中
+                xmlHttp.open("POST", "demo_dom_http.asp", false);
+                xmlHttp.send(xmlDoc);
+                document.write(xmlHttp.responseText);
+            }
+        }
+    }
+    xmlhttp.send(null);
+} else {
+  alert("Your browser does not support XMLHTTP.");
+}
+</script>
+```
