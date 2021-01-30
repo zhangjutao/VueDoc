@@ -53,7 +53,7 @@ axios.post('/user/12345', {
 
 source.cancel('用户撤销了请求');
 ```
-从上例中可以看到，在 axios 中，使用基于 <font color="red">CancelToken</font> 的撤销请求方案。然而，该提案现已撤回，详情如 点这里。具体的撤销请求的实现方法，将在后面的源代码分析的中解释。   
+从上例中可以看到，在 axios 中，使用基于 <font color="red">CancelToken</font> 的撤销请求方案。然而，该提案现已撤回，详情如点这里。具体的撤销请求的实现方法，将在后面的源代码分析的中解释。   
 
 ---
 
@@ -79,7 +79,7 @@ module.exports = function dispatchRequest(config) {
         });
 };
 ```
-上面的代码中，我们能够知道 <font color="red">dispatchRequest</font> 方法是通过 <font color="red">config.adapter</font> ，获得发送请求模块的。我们还可以通过传递，符合规范的适配器函数来替代原来的模块（一般来说，我们不会这样做，但它是一个松散耦合的扩展点）。   
+上面的代码中，我们能够知道 <font color="red">dispatchRequest</font> 方法是通过 <font color="red">config.adapter</font> ，获得发送请求模块的。我们还可以通过传递符合规范的适配器函数来替代原来的模块（一般来说，我们不会这样做，但它是一个松散耦合的扩展点）。   
 在 <font color="red">defaults.js</font> 文件中，我们可以看到相关适配器的选择逻辑——根据当前容器的一些独特属性和构造函数，来确定使用哪个适配器。    
 ```js
 function getDefaultAdapter() {

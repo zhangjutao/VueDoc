@@ -3236,8 +3236,7 @@ function multiRequest(urls = [], maxNum) {
 var str = "87463297";
 console.info(str.replace(/\d{1,3}(?=(\d{3})+$)/g,function(s){
   return s+','
-}) )
-console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,'$1,')) // 出错！！！297,297,297
+}))
 ```
 
 * 利用正则的子项来替换
