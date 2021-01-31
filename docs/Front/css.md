@@ -127,6 +127,12 @@ CSS3 新增伪类举例:
 (5) p:nth-child(2) 选择属于其父元素的第二个子元素的每个 <p> 元素。
 (6) :enabled :disabled 控制表单控件的禁用状态。
 (7) :checked 单选框或复选框被选中。
+(8) :before 在元素内部最后添加内容
+(9) :after 在元素内部最前添加内容
+(10) :nth-child(n) 匹配父元素下指定子元素，在所有子元素中排序第n
+(11) :first-child、:last-child
+(12) :first-line 选择元素中的第一行
+(13) :first-letter 选择元素中的第一个字符
 ```
 
 ---

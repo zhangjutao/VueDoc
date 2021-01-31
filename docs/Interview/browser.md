@@ -1,6 +1,6 @@
 # 浏览器相关
 ## 从一个url地址到最终页面渲染完成，发生了什么?
-1. DNS解析：将域名地址解析为IP地址（依次从下面查找）
+1. DNS解析：将域名地址解析为IP地址（依次从下面查找）  
   -- 读取浏览器DNS缓存  
   -- 系统DNS缓存  
   -- 路由器DNS缓存  
@@ -92,6 +92,21 @@
 
 ---
 
+## 获取屏幕宽高width(),outerWidth,innerWidth,clientWidth的区别  
+* $(window).width()与$(window).height()：获得的是屏幕可视区域的宽高，不包括滚动条与工具条  
+* document.documentElement.clientWidth与document.documentElement.clientHeight：获得的是屏幕可视区域的宽高，不包括滚动条与工具条  
+* window.innerWidth与window.innerHeight：获得的是可视区域的宽高，但是window.innerWidth宽度包含了纵向滚动条的宽度，window.innerHeight高度包含了横向滚动条的高度  
+* window.outerWidth与window.outerHeight：获得的是加上工具条与滚动条窗口的宽度与高度  
+* document.body.clientWidth与document.body.clientHeight: document.body.clientWidth获得的也是可视区域的宽度，但是document.body.clientHeight获得的是body内容的高度
+* clientWidth & clientHeigh:  返回本身的宽高 + padding
+* clientTop & clientLeft: clientTop = boder.top(上边框的宽度) 、 clientLeft = boder.left(左边框的宽度) 
+* offsetWidth & offsetHeight: 返回本身的宽高 + padding + border + 滚动条  
+* offsetLeft & offsetTop: 所有HTML元素拥有offsetLeft和offsetTop属性来返回元素的X和Y坐标
+* scrollWidth & scrollHeight: 这两个属性是元素的内容区域加上内边距，再加上任何溢出内容的尺寸。因此，如果没有溢出时，这些属性与clientWidth和clientHeight是相等的  
+* scrollLeft & scrollTop: 指定的是元素的滚动条的位置
+
+---
+
 ## 常见浏览器内核
 浏览器 的内核引擎，基本上是四分天下：  
 1）Trident: IE 以Trident 作为内核引擎  
@@ -116,14 +131,14 @@ Wekbit是一个开源的Web浏览器引擎，也就是浏览器的内核。Apple
       * 解决方法：
          1. 对另一个div也使用float;
          2. 给浮动的div添加属性margin-right: –3px，但是这样写，在其他浏览器又会不正常，所以我们需要添加IE6的hack，在属性margin-right前添加下划线_margin-right: –3px。（IE6以及更低版本的hack，是在属性前面添加下划线_）
-   4. 双外边距浮动问题
-      * 问题出现的浏览器：IE6及其更低的版本
-      * 问题描述：任何浮动的元素上的外边距加倍，例如：如果元素设置的外边距为margin-left: 15px，在浏览器里会显示为margin-left: 30px。
-      * 解决方法：将元素的display属性设置为inline，因为元素为浮动的，所以这么设置不会影响元素在浏览器的显示。
+   4. 双外边距浮动问题  
+      * 问题出现的浏览器：IE6及其更低的版本  
+      * 问题描述：任何浮动的元素上的外边距加倍，例如：如果元素设置的外边距为margin-left: 15px，在浏览器里会显示为margin-left: 30px。  
+      * 解决方法：将元素的display属性设置为inline，因为元素为浮动的，所以这么设置不会影响元素在浏览器的显示。  
    5. IE6不支持min-*
       * 问题出现的浏览器：IE6及其更低的版本
-      * 问题描述：IE6不支持min-height该属性。即使定义了元素高度，如果内容超过元素的高度，IE6在解析时，会自动延长元素的高度。
-      * 解决方法：利用IE6不识别!important，给元素设置固定高度，并且设置元素高度自动。
+      * 问题描述：IE6不支持min-height该属性。即使定义了元素高度，如果内容超过元素的高度，IE6在解析时，会自动延长元素的高度。
+      * 解决方法：利用IE6不识别!important，给元素设置固定高度，并且设置元素高度自动。
         Height : auto  ! important;
         Height:300px;
         Min_height:300px;
@@ -137,7 +152,7 @@ Wekbit是一个开源的Web浏览器引擎，也就是浏览器的内核。Apple
       * 问题描述：在IE6中，使用png-24透明图片，不透明。
       * 解决方法：图片使用gif格式或者png-8格式图片。
    8. IE5~8不支持opacity
-      * 问题出现的浏览器：IE8及其更低的版本
+      * 问题出现的浏览器：IE8及其更低的版本
       * 问题描述：IE5~8不支持CSS属性opacity
       * 解决方法：这时可以另外添加ie滤镜alpha，如下：
       ```js
@@ -222,6 +237,7 @@ repaint 就是重绘，reflow 就是回流。
 
 
 ## 什么是跨域? 解决跨域的办法有哪些?
+[前端解决跨域的九种方法](https://www.cnblogs.com/sdcs/p/8484905.html)
 ```js
 
 1. 同源策略
@@ -230,7 +246,7 @@ repaint 就是重绘，reflow 就是回流。
 2. 跨域
    违背同源策略就会产生跨域
 3. 解决跨域
-   jsonp、cors、服务器代理...
+   jsonp、cors(Access-Control-Allow-Origin)、postMessage(HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一)、服务器代理...
 
 // jsonp 示例  利用script标签天然能跨域的特性解决跨域问题
 //1. 创建script标签

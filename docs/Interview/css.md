@@ -613,8 +613,8 @@ css优先级，可以给选择器分配权值：
 * 块级元素可以继承的属性: 1、text-indent、text-align
 * 无继承的属性：
    1. display
-   2. 文本属性：vertical-align：text-decoration：text-shadow： white-space：unicode-bidi：
-   3，盒子模型的属性:宽度、高度、内外边距、边框等        
+   2. 文本属性：vertical-align：text-decoration：text-shadow： white-space: unicode-bidi        
+   3. 盒子模型的属性:宽度、高度、内外边距、边框等
    4. 背景属性：背景图片、颜色、位置等        
    5. 定位属性：浮动、清除浮动、定位position等        
    6. 生成内容属性:content、counter-reset、counter-increment        
@@ -715,10 +715,10 @@ input中加入这个属性autocapitalize="off"
    2. 定位属性及浮动
       * top、bottom、left、right、position、float、clear
    3. 改变节点内部文字结构
-      * text-align、overfloe、font-weight、font-family、line-height、vertical-align、white-space、font-size
+      * text-align、overflow、font-weight、font-family、line-height、vertical-align、white-space、font-size
 
 ### 重绘
-* 当render tree中的一些元素需要更新属性，而这些属性只是影响元素的<font color=red>外观、风格</font>，而不会影响布局的，比如background-color、clor等，就成为重绘
+* 当render tree中的一些元素需要更新属性，而这些属性只是影响元素的<font color=red>外观、风格</font>，而不会影响布局的，比如background-color、color等，就成为重绘
 * 回流必将引起重绘，而重绘不一定会引起回流
 * 只触发重绘的属性
    * color、border-style、border-redius、visibility、text-decoration、background、background-image、background-position、background-repeat、background-size、outline-color、outline、outline-style、outline-width、box-shadow
