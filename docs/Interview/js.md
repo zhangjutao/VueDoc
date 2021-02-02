@@ -3242,16 +3242,22 @@ console.info(str.replace(/\d{1,3}(?=(\d{3})+$)/g,function(s){
 var str = "87463297.123";
 console.info(str.replace(/\d{1,3}(?=(\d{3})+(?=\.|$))/g,function(s){
   return s+','
-}))
+})) // 此时s为\d{1, 3}匹配的内容
 ```
 
 * 利用正则的子项来替换
 ```js
 var str = "87463297";
+console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,function(s){
+  return s+','
+}))
 console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,function($1){
   return $1=$1+','
 }))
+// 此时$1和s跟上面一样,其实它们都是回调函数的参数，只是参数命名的差异；为\d{1, 3}匹配的内容.
+
 console.info( str.replace(/(\d{1,3})(?=(\d{3})+$)/g,'$1,')) // 正常！！！
+// 这里的$1才是整整被(\d{1,3})这个括号捕捉的匹配内容，是有特殊含义的捕获分组
 
 // 考虑小数点
 var str = "87463297.123";
