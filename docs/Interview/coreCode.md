@@ -602,41 +602,41 @@ const isPromise = target => target instanceof Promise;
 ```js
 // 创建Promise类
 class Promise{
-	constractor(executor){
-		// 要求Promise的参数必须为函数，如果不是函数就抛出错误
-		if(!isFunction(executor)){
-			throw new Error('Promise must accept a function as a parameter')
-		}
-		
-		this._status = PENDING // 初始化状态值为pending
-		this._value = undefined // 给value设置默认值
-		this._reason = undefined  // 给reason设置默认值
+  constractor(executor){
+    // 要求Promise的参数必须为函数，如果不是函数就抛出错误
+    if(!isFunction(executor)){
+      throw new Error('Promise must accept a function as a parameter')
+    }
+
+    this._status = PENDING // 初始化状态值为pending
+    this._value = undefined // 给value设置默认值
+    this._reason = undefined  // 给reason设置默认值
     // 执行executor方法,把参数resole，reject传递进来
     try {
         executor(this._resolve.bind(this), this._reject.bind(this))
-    }				
+    }
     catch (err) { // executor执行出现异常调用rejected方法
         this._reject(err)
     }
-	}
+  }
 
-	// 定义executor的参数resolve的执行函数
-	_resolve(value){
-		const {_status: status} = this
-		if (isPending(status)) { // 状态只能由pending变成其他两种状态，且只能改变一次
-			this._value = value // 将resove方法传递进来的参数保存下来
-			this._status = FULFILLED // 状态更新为fufilled
-		}
-	},
+  // 定义executor的参数resolve的执行函数
+  _resolve(value){
+    const {_status: status} = this
+    if (isPending(status)) { // 状态只能由pending变成其他两种状态，且只能改变一次
+      this._value = value // 将resove方法传递进来的参数保存下来
+      this._status = FULFILLED // 状态更新为fufilled
+    }
+  },
 
-	// 定义executor的参数reject的执行函数
-	_reject(reason){
-		const {_status: status} = this
-		if(isPending(status)){ // 状态只能由pending变成其他两种状态，且只能改变一次
-			this._reason = reason
-			this._status = REJECTED
-		}
-	}
+  // 定义executor的参数reject的执行函数
+  _reject(reason){
+    const {_status: status} = this
+    if(isPending(status)){ // 状态只能由pending变成其他两种状态，且只能改变一次
+      this._reason = reason
+      this._status = REJECTED
+    }
+  }
 }
 ```
 
@@ -716,4 +716,37 @@ then(onFulfilled, onRejected) {
 })
 }
 
+
+// 为了实现 then 方法的链式调用，我们需要修改 constractor 下的 _resolve 和 _reject 方法，让他们依次执行成功/失败任务队列中的函数
+
+_resolve(value) {
+  const { _status: status } = this;
+  const resolveFn = () => {
+    if (isPending(status)) { // 状态只能由pending变成其他两种状态，且只能改变一次
+      this._value = value // 将resove方法传递进来的参数保存下来
+      this._status = FULFILLED // 状态更新为fufilled
+      let cb;
+      while(cb = this._fulfilledQueeus.shift()) {
+        cb(value);
+      }
+    }
+  }
+  // 通过setTimeout 0模拟同步的promise情况
+  setTimeout(resolveFn, 0);
+}
+
+_reject(reason) {
+  const { _status: status } = this
+  const rejectFun = () => {
+    if (isPending(status)) { // 状态只能由pending变成其他两种状态，且只能改变一次
+        this._reason = reason
+        this._status = REJECTED
+        let cb
+        while (cb = this._rejectedQueues.shift()) {
+            cb(reason)
+        }
+    }
+  }
+  setTimeout(rejectFun, 0)
+}
 ```
