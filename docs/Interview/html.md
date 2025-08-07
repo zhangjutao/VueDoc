@@ -218,7 +218,7 @@ CSS 规范规定，每个元素都有 display 属性，确定该元素的类型�
 ---
 
 ## Label 的作用是什么？是怎么用的 ？
-label 标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
+label 标签来定义表单控件间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。
 ```
 <label for="Name">Number:</label>
 <input type=“text“ name="Name"  id="Name"/>
@@ -236,7 +236,7 @@ HTML5 中有个新属性autocomplete ，autocomplete 属性规定表单是否应
 ## 如何实现浏览器内多个标签页之间的通信 ? (阿里)
 * WebSocket、SharedWorker；
 * 也可以调用 localStorage、cookies 等本地存储方式；
-* localstorge 在另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；注意 quirks：Safari 在无痕模式下设置 localstorge 值时会抛出 QuotaExceededError 的异常；
+* localstorge 在另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；注意 Safari 在无痕模式下设置 localstorge 值时会抛出 QuotaExceededError 的异常；
 
 ---
 
@@ -263,7 +263,7 @@ HTML5 中有个新属性autocomplete ，autocomplete 属性规定表单是否应
 
 ## title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别 ？
 * title 属性没有明确意义只表示是个标题，H1 则表示层次明确的标题，对页面信息的抓取也有很大的影响；
-* strong 是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：strong 会重读，而 b 是展示强调内容。 
+* strong 是标明重点内容，有语气加强的含义，使用阅读设备阅读网页时：strong 会重读，而 b 是展示强调内容。 
 ::: tip
    1. 都展示为加粗的效果
    2. b 元素代表侧重实用目的而不带有任何额外重要性也不暗示不同语态或语气的一段文本，比如一段文本摘要中的关键词、一段审查中的产品名称、文本驱动软件中的可执行语句或者一篇文章的导语。

@@ -61,7 +61,7 @@
 
 5. 延伸
 ```js
-[] == 0      //false  有一边是数字，所以[]转换成数字0， 0 ！== 0   ----> 规则三
+[] == 0      //true  有一边是数字，所以[]转换成数字0， 0 === 0   ----> 规则三
 ![] == 0     //true   ![]转换成false，然后false转换成0 0 === 0    ----> 规则三
 [] == ''     //true []转换成字符串为''                            
 !![] == ''   //false  !![]转换成false, 然后转换成数字1， ''转换成数字0  ----> 规则三 规则二
@@ -122,7 +122,8 @@ new Promise(function(resolve,reject){
        接着输出   flase
 */
 ```
-::: tips
+
+::: tip 解析
 根据上面的运行结果来看，如果在一个then（）中没有返回一个新的promise，则return 什么下一个then就接受什么，在上面的实例代码中return的是false，下一个then中接受到的value就是false，如果then中没有return，则默认return的是undefined.
 :::
 

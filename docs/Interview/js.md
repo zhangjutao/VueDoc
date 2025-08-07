@@ -13,9 +13,13 @@
 概念：以第二个参数为基数来解析第一个参数字符串，通常用来做十进制的向上取整（省略小数）   
 特点：接收两个参数parseInt(string,radix)   
 string：字母（大小写均可）、数组、特殊字符（不可放在开头,特殊字符及特殊字符后面的内容不做解析）的任意字符串  
+:::
+
 ::: tip MDN
 MDN文档中指明 parseInt 第二个参数是一个2到36之间的整数值，用于指定转换中采用的基数。如果省略该参数或其值为0，则数字将以10为基础来解析。如果该参数小于2或者大于36，则 parseInt 返回 NaN。此外，转换失败也会返回 NaN
-::: 
+:::
+
+::: tip 规则
 radix：解析字符串的基数，基数规则如下：  
    1. 区间范围介于2~36之间；  
    2. 当参数为 0，parseInt() 会根据十进制来解析；   
@@ -290,23 +294,35 @@ var currying = function(fn){
   var _args = [];
   return function(){
     if(arguments.length === 0){
-      return fn.apply(this,_args);
+      return fn.call(this,_args);
     }
-    Array.prototype.push.apply(_args, [].slice.call(arguments));
+    _args.push(...Array.from(arguments));
     return arguments.callee;
   }
 }
 var multi = function(arg){
-  var total = 0;
-  for(var i = 0;i < arg.length;i++){
-    total += arg[i];
-  }
-  return total;
+  return arg.reduce((pre, cur) => pre + Number(cur), 0)
 }
 var sum = currying(multi);
 sum(100,200)(300);
 sum(400);
 console.log(sum());  // 1000  （空白调用时才真正计算）
+
+// arguments.callee 已被废弃：在现代JavaScript中，arguments.callee 已被废弃，可能导致函数引用问题。
+// 可以优化成如下代码：
+var currying = function(fn){
+  var _args = [];
+  var innerFn = function(){
+    if(arguments.length === 0){
+      return fn(_args);  // 直接传递整个数组
+    }
+    // Array.prototype.push.apply(_args, [].slice.call(arguments));
+    _args.push(...Array.from(arguments));
+    return innerFn;  // 使用函数名而不是 arguments.callee
+  }
+  return innerFn;
+}
+
 
 ```
 ---
@@ -553,9 +569,9 @@ Foo().getName();   // 1  ( Foo() ).getName()
 getName();          // 1  上一步将全局的函数重新赋值了，所以输出1
 new Foo.getName(); // 2 点的优先级比new高，Foo.getNmae()能找到方法因此先执行 => new ( Foo.getName() )
 //.优先级最高，先执行Foo.getName(),输出2
-//new Foo不带参优先级为16
+//new Foo不带参优先级为17
 //而‘.’成员访问的优先级为18, 函数调用的优先级为17
-//根据优先级的顺序应该事18 > 17 > 16，所以先执行Foo.getName，然后执行函数调用(Foo.getName)(),最后执行new
+//根据优先级的顺序应该事18 > 17，所以先执行Foo.getName，然后执行函数调用(Foo.getName)(),最后执行new
 new Foo().getName();    // 3 ( new Foo() ).getName()
 //先执行new Foo(),再调用实例中的getName方法，实例中没有再去原型链中找，找到输出3
 /*
@@ -590,20 +606,20 @@ function fun(n, o) {
         }
     };
 }
-var a = fun(0);   // undefiend  形成闭包1 n = 0
-a.fun(1);      //0 fun(1,0) => 形成闭包2 n = 1
-a.fun(2);      //0 fun(2,0) => 形成闭包3 n = 2
-a.fun(3);      //0 fun(3,0) => 形成闭包3 n = 3
+var a = fun(0);   // undefiend  形成闭包1 n=0   o=undefined
+a.fun(1);      //0 fun(1,0) => 形成闭包2 n=1  o=0
+a.fun(2);      //0 fun(2,0) => 形成闭包3 n=2  o=0
+a.fun(3);      //0 fun(3,0) => 形成闭包3 n=3  o=0
 var b = fun(0).fun(1).fun(2).fun(3);
-//fun0  =>   undefined  返回对象obj0 形成闭包 n = 0
-//.fun(1) => 0           obj0调用函数fun(1,0),返回对象obj1,形成闭包n=1
-//.fun(2) => 1           obj1调用函数fun(2,1),返回对象obj2,形成闭包n=2
-//.fun(3) => 2           obj2调用函数fun(3,2),返回对象obj3,形成闭包n=3
+//fun0  =>   undefined  返回对象obj0 形成闭包 n=0   o=undefined
+//.fun(1) => 0           obj0调用函数fun(1,0),返回对象obj1,形成闭包n=1  o=0
+//.fun(2) => 1           obj1调用函数fun(2,1),返回对象obj2,形成闭包n=2  o=1
+//.fun(3) => 2           obj2调用函数fun(3,2),返回对象obj3,形成闭包n=3  0=2
 var c = fun(0).fun(1);
-//fun0  =>   undefined  返回对象obj0 形成闭包 n = 0
-//.fun(1) => 0           obj0调用函数fun(1,0),返回对象obj1,形成闭包n=1
-c.fun(2);  // 1    obj1调用函数fun(2,1),返回对象obj2,形成闭包n =  2
-c.fun(3);  // 1    obj1调用函数fun(3,1),返回对象obj22,形成闭包n =  3
+//fun0  =>   undefined  返回对象obj0 形成闭包 n=0 o=undefined
+//.fun(1) => 0           obj0调用函数fun(1,0),返回对象obj1,形成闭包n=1  o=0
+c.fun(2);  // 1    obj1调用函数fun(2,1),返回对象obj2,形成闭包n=2  o=1
+c.fun(3);  // 1    obj1调用函数fun(3,1),返回对象obj22,形成闭包n=3 o=1
 ```
 ---
 
@@ -639,7 +655,7 @@ Singleton.getInstance = (function(){
 var sg1 = Singleton.getInstance('小明');
 ```
 2. 基于闭包
-3. 模块化开发 COMMONJS(module.exports 和 exports require) ES6 (export default 和 export import)
+3. 模块化开发 COMMONJS(module.exports 和 require) ES6 (export default 和 import)
 ::: tip exports与module.exports的区别?
 用一句话来说明就是，require方能看到的只有module.exports这个对象，它是看不到exports对象的，而我们在编写模块时用到的exports对象实际上只是对module.exports的引用。
 :::
@@ -654,6 +670,7 @@ var name = 'World';
   /**自执行函数执行时，在局部作用域中会将var name进行变量提升，不考虑条件是否成立。*/
   if(typeof name === 'undefined'){
     var name = 'Jack';  //name提升后为undefined,进入此处重新赋值Jack
+    console.log(name);
   }else{
     console.log(name);
   }
@@ -750,7 +767,7 @@ g = function () {return false;}
   //function g(){return true;} //不加这条语句报错
 }();
 console.log(f());
-console.log(g()); //全局定义的g未被影响
+console.log(g()); // 全局定义的g未被影响
 
 
 /****************变量提升变体******************/
@@ -902,7 +919,7 @@ function fn(x, y){
     0 : 10
     length : 1
   }
-  arguments和形参之间的映射是以arguments的索引为基础完成的额，
+  arguments和形参之间的映射是以arguments的索引为基础完成的，
   arguments中有这个索引，浏览器会完成和对应形参变量中的映射机制搭建，
   如果形参个数比arguments个数多，那么多出来的形参是无法和arguments中对应的索引建立关联的
 
@@ -964,9 +981,10 @@ function bubbleSort(arr){
     for(var j = 0; j < arr.length - i; j++){
       if(arr[j] > arr[j + 1]){
         //前面的值大于后面的值，交换双方的值
-        var tmp = arr[j + 1];
-        arr[j + 1] = arr[j];
-        arr[j] = tmp;
+        // var tmp = arr[j + 1];
+        // arr[j + 1] = arr[j];
+        // arr[j] = tmp;
+        [arr[j+1], arr[j]] = [arr[j], arr[j+1]] // 简化
       }else{
         //前面的值小于后面的值，指针顺位后移
       }
@@ -1081,12 +1099,13 @@ function throttle(fn, delay){
   let lastTime = 0;
   return function () {
     //获取参数
-    let args = arguments;
+    const args = arguments;
+    const context = this;
     //记录当前函数触发的时间
     let nowTime = Data.now();
     if(nowTime - lastTime > delay){
       //修正this指向问题
-      fn.apply(this, args);
+      fn.apply(context, args);
       //同步时间
       lastTime = nowTime;
     }
@@ -1099,7 +1118,8 @@ function debounce(fn, delay){
   //记录上一次的延时器
   let timer = null;
   return function(){
-    let args = arguments; 
+    const args = arguments;
+    const context = this;
     // let args = [].slice.call(arguments)
     //arguments这个”伪数组“,除了不是”原型继承自’Array.prototype‘“之外，其他特征和数组是一样的。所以可以当作数组使用
     //清除上一次的延时器
@@ -1109,7 +1129,7 @@ function debounce(fn, delay){
     //重新设置新的延时器
     timer = setTimeout(() => {
       //修复this指向问题
-      fn.apply(this,args);
+      fn.apply(context,args);
     }, delay)
   }
 }
@@ -1582,14 +1602,15 @@ JS是单线程的
 [不要混淆nodejs和浏览器中的event loop](https://cnodejs.org/topic/5a9108d78d6e16e56bb80882)   
 [node中的Event模块](https://github.com/SunShinewyf/issue-blog/issues/34)   
 宏任务：  
-&emsp;&emsp;分类：在浏览器环境中，常见的 macro task 有 setTimeout、setInterval、MessageChannel、postMessage、requrestAnimationFrame；在Node中有setImmediate、setTimeout、setInterval、
+&emsp;&emsp;分类：在浏览器环境中，常见的 macro task 有 setTimeout、setInterval、MessageChannel、postMessage、requrestAnimationFrame；在Node中有setImmediate、setTimeout、setInterval
+
 &emsp;&emsp;1. 宏任务所处的队列就是宏任务队列  
 &emsp;&emsp;2. 第一个宏任务队列中只有一个任务：执行主线程的JS代码  
 &emsp;&emsp;3. 宏任务队列可以有多个  
 &emsp;&emsp;4. 当宏任务队列中的任务全部执行完后会查看是否有微任务队列，如果有则先执行微任务队列，如果没有就查看是否有宏任务队列  
 
 微任务:  
-&emsp;分类：浏览器有new Promise().then(回调)中的回调、MutationObserver  Node中有process.nextTick  
+&emsp;分类：浏览器有new Promise().then(回调)中的回调、MutationObserver ; Node中有process.nextTick  
 &emsp;&emsp;1. 微任务所处的队列就是微任务队列  
 &emsp;&emsp;2. 只有一个微任务队列  
 &emsp;&emsp;3. 在上一个宏任务执行完毕后如果有微任务队列就会执行微任务队列中的所有任务  
@@ -1624,10 +1645,11 @@ console.log('----------------end-----------------')
 ```
 ![task](./images/tisk.png)   
 
-/--------------------------面试题2-----------------------------/
 [async/await以及js中的微任务和宏任务](https://blog.csdn.net/qq_41681425/article/details/85775077)
 [参考链接](https://segmentfault.com/q/1010000016147496)
+
 ```js
+/--------------------------面试题2-----------------------------/
 async function async1() {
   console.log('async1 start')
   await async2()
@@ -1970,6 +1992,50 @@ JSON.parse(JSON.stringify());
 2. 无法拷贝一些特殊的对象，诸如 RegExp, Date, Set, Map等。
 3. 无法拷贝函数(划重点)。
 
+::: tip 说明
+JSON.stringify 只能处理基本对象、数组和原子类型。任何其他类型都可以以难以预测的方式处理。<br>
+例如，日期({date: new Date(123)})被转换为字符串({date: "1970-01-01T00:00:00.123Z"})。而 Set、Map、RegExp、Error对象等只是转换为空对象 {}；函数和unfined会被忽略
+```js
+const kitchenSink = {
+  set: new Set([1, 3, 3]),
+  map: new Map([[1, 2]]),
+  regex: /foo/,
+  deep: {
+    array: [
+      undefined,
+      new File(["foo"], "foo.txt", {
+        type: "text/plain",
+      }),
+      1,
+      'a'
+    ] 
+  },
+  error: new Error('Hello!'),
+  fn: function(){console.log('fn')},
+  name: undefined
+}
+​
+const veryProblematicCopy = JSON.parse(JSON.stringify(kitchenSink))
+
+// 得到结果
+// jsx复制代码
+{
+    "set": {},
+    "map": {},
+    "regex": {},
+    "deep": {
+        "array": [
+            null,
+            {},
+            1,
+            "a"
+        ]
+    },
+    "error": {}
+}
+```
+
+:::
 
 ```js
 var obj1 = {
@@ -2002,13 +2068,15 @@ function deepClone(obj){
 
 //深拷贝优化(支持基本数据类型、原型链、RegExp、Date类型)
 //问题：当obj中有属性指向自身时会因循环递归而暴栈  obj[z] = obj
-function deepClone(obj, parent = null){ 
+function deepClone(obj){ 
   let result; // 最后的返回结果
   if(obj && typeof obj === "object"){ // 返回引用数据类型(null已被判断条件排除))
     if(obj instanceof RegExp){ // RegExp类型
-      result = new RegExp(obj.source, obj.flags)
+      result = new RegExp(obj.source, obj.flags) 
+      result = new RegExp(obj)
     }else if(obj instanceof Date){ // Date类型
       result = new Date(obj.getTime());
+      result = new Date(obj)
     }else{
       if(obj instanceof Array){ // Array类型
         result = []
@@ -2030,6 +2098,28 @@ function deepClone(obj, parent = null){
     return obj
   }
   return result;
+}
+
+// 常规使用这个版本即可
+/*------------------------简化版本------------------------*/
+function deepClone(obj) {
+    let result
+    if (obj && typeof obj === "object") {
+        if (obj instanceof RegExp) {
+            result = new RegExp(obj)
+        } else if (obj instanceof Date) {
+            result = new Date(obj)
+        } else {
+            result = new obj.constructor()
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    result[key] = deepClone(obj[key])
+                }
+            }
+        }
+    } else { // 返回基本数据类型和function
+        return obj
+    }
 }
 
 /*-------------------------最终优化版----------------------*/
@@ -2076,6 +2166,45 @@ function deepClone(obj, parent = null){
   return result;
 }
 
+
+/*-------------------------最终优化版  简化版本----------------------*/
+function deepClone(obj, parent = null){ 
+  let result; // 最后的返回结果
+
+  let _parent = parent; // 防止循环引用
+  while(_parent){
+    if(_parent.originalParent === obj){
+      return _parent.currentParent;
+    }
+    _parent = _parent.parent;
+  }
+  
+  if(obj && typeof obj === "object"){ // 返回引用数据类型(null已被判断条件排除))
+    if(obj instanceof RegExp){ // RegExp类型
+      result = new RegExp(obj, obj)
+    }else if(obj instanceof Date){ // Date类型
+      result = new Date(obj);
+    }else{
+      result = new obj.constructor()
+      for(let key in obj){ // Array类型 与 Object类型 的深拷贝
+        if(obj.hasOwnProperty(key)){
+          if(obj[key] && typeof obj[key] === "object"){
+            result[key] = deepClone(obj[key],{ 
+              originalParent: obj,
+              currentParent: result,
+              parent
+            });
+          }else{
+            result[key] = obj[key];
+          }
+        }
+      }
+    }
+  }else{ // 返回基本数据类型与Function类型,因为Function不需要深拷贝
+    return obj
+  }
+  return result;
+}
 
 // 测试用
 var obj1 = {
@@ -2315,14 +2444,15 @@ console.log(b); //b is not defined
 ---
 
 ## 为什么在JavaScript中0.1+0.2不等于0.3？
-[0.1 + 0.2不等于0.3？](https://www.sohu.com/a/254865340_796914)
-[JS 数据精度以及数字格式化](https://www.jianshu.com/p/77f8130fd278)
+[0.1 + 0.2不等于0.3？](https://www.sohu.com/a/254865340_796914)<br>
+[JS 数据精度以及数字格式化](https://www.jianshu.com/p/77f8130fd278)<br>
 0.1+0.2不等于0.3？是不是有点颠覆你的认知，但是，在js中，是真实存在的！
 
 >console.log(0.1+0.2);  // 0.30000000000000004
 其实这都是因为浮点数运算的精度问题。    
 简单来说，因为计算机只认识二进制，在进行运算时，需要将其他进制的数值转换成二进制，然后再进行计算。    
 ::: tip 乘2取整
+```js
 小数转二进制使用“乘2取整”的方法：
 0.1转二进制过程如下：
 0.1*2 = 0.2 取整数位0
@@ -2334,6 +2464,7 @@ console.log(b); //b is not defined
 0.4*2 = 0.8 取整数位0
 ...
 结果位0.00011001100...
+```
 :::
 
 由于浮点数用二进制表达时是无穷的：    
@@ -2447,6 +2578,32 @@ function lazyload(){
 }
 lazyload();  //首屏的图片需要手动调用才能加载
 document.addEventListener('scroll',lazyload);  //其余图片通过监听scroll加载
+
+
+/***************************简化方案*************************/
+ // 获取所有的图片标签
+const imgs = document.getElementsByTagName('img')
+// 获取可视区域的高度
+// 在和现代浏览器及 IE9 以上的浏览器中，可以用 window.innerHeight 属性获取。在低版本 IE 的标准模式中，可以用 document.documentElement.clientHeight 获取，这里我们兼容两种情况
+const viewHeight = window.innerHeight || document.documentElement.clientHeight
+// num用于统计当前显示到了哪一张图片，避免每次都从第一张图片开始检查是否露出
+let num = 0
+function lazyload(){
+    for(let i=num; i<imgs.length; i++) {
+        // 用可视区域高度减去元素顶部距离可视区域顶部的高度
+        let distance = viewHeight - imgs[i].getBoundingClientRect().top
+        // 如果可视区域高度大于等于元素顶部距离可视区域顶部的高度，说明元素露出
+        if(distance >= 0 ){
+            // 给元素写入真实的src，展示图片
+            imgs[i].src = imgs[i].getAttribute('data-original')
+            // 前i张图片已经加载完毕，下次从第i+1张开始检查是否露出
+            num = i + 1
+        }
+    }
+}
+// 监听Scroll事件
+window.addEventListener('scroll', lazyload, false);
+
 ```
 
 
@@ -2545,10 +2702,10 @@ function cls(){
     getValue:()	=>	this.a
   } 
 } 
-var	o	=	new	cls;   // 按构造函数执行时，this是构造函数生成的对象{a:100},返回的新对象{getValue:fn}中由于箭头函数的关系，this会绑定构造函数生成的对象{a:100}
+var o = new	cls;   // 按构造函数执行时，this是构造函数生成的对象{a:100},返回的新对象{getValue:fn}中由于箭头函数的关系，this会绑定构造函数生成的对象{a:100}
 o.getValue();	//100    this指向 {a:100}
 o.a  //a在外⾯永远⽆法访问到
-var f = cls();   // 按照普通函数执行时，this指向window{a:100}，因此返回的对象{getValue:fn}中由于箭头函数的远古，this指向window
+var f = cls();   // 按照普通函数执行时，this指向window{a:100}，因此返回的对象{getValue:fn}中由于箭头函数的缘故，this指向window
 f.getValue();	//100   //  this指向window
 f.a; // undifined
 ```
@@ -2561,25 +2718,25 @@ f.a; // undifined
 ## 箭头函数的this指向问题(实现私有变量)
 
 ```js
-function	cls(){
-  this.a	=	100;
-  return	{
-    getValue:()	=>	this.a
+function cls(){
+  this.a = 100;
+  return {
+    getValue:() => this.a
   }
 }
-var	o	=	new	cls;
+var o = new cls;
 o.getValue();  // 100
 o.a;           // undefined
 var b = {a:111,getValue:o.getValue};
 b.getValue();  // 100
 
-function	cls(){
-  this.a	=	100;
-  return	{
+function cls(){
+  this.a = 100;
+  return {
     getValue: function(){return this.a}
   }
 }
-var	o	=	new	cls;
+var o = new cls;
 o.getValue();  // undefined
 o.a;           // undefined
 var b = {a:111,getValue:o.getValue};
@@ -2597,15 +2754,22 @@ b.getValue();  // 111
 ---
 
 ## 不使用new运算符，尽可能找到获得对象的方法。
-1. 利用字面量 
+1. 利用字面量
+```js
   var	a	=	[],	b	=	{},	c	=	/abc/g, d = function(){}
+```
 2. 利用dom	api 
-  var	d	=	document.createElement('p')
+``` js
+  var	d	=	document.createElement('p')\
+```
 3. 利用JavaScript内置对象的api 
+``` js
   var	e	=	Object.create(null) var	f	=	Object.assign({k1:3,	k2:8},	{k3:	9}) var	g	=	JSON.parse('{}')
-4. 利用装箱转换 
+```
+4. 利用装箱转换
+``` js
   var	h	=	Object(undefined),	i	=	Object(null),	k	=	Object(1),	l	=	Object('abc'),	m	=	Object(true)
-
+```
 ---
 
 ## 遍历HTML节点,输出标签名字
@@ -2623,46 +2787,73 @@ let str1 = '';
 function deepLoopTagNode(parentNode){
   //parentNode.tagName && console.log(parentNode.tagName)
   parentNode.tagName && (str1 += parentNode.tagName);
-	const childNodes = parentNode.childNodes;  //childNodes返回所有子节点包括元素节点，文本节点，属性节点
-	//可以使用children
-	Array.prototype.filter.call(childNodes, item => item.tagName)
-	.map(itemNode => {deepLoopTagNode(itemNode)})
+  onst childNodes = parentNode.childNodes;  //childNodes返回所有子节点包括元素节点，文本节点，属性节点
+  //可以使用children
+  Array.prototype.filter.call(childNodes, item => item.tagName)
+  .map(itemNode => {deepLoopTagNode(itemNode)})
 }
 
 let str2 = '';
 function deepLoopTagNode1(parentNode){
   parentNode.tagName && console.log(parentNode.tagName)
   parentNode.tagName && (str2 += parentNode.tagName);
-	const childNodes = parentNode.children;  //childNodes返回所有子节点包括元素节点，文本节点，属性节点
-	//可以使用children
-	Array.prototype.map.call(childNodes, itemNode => {deepLoopTagNode1(itemNode)})
+  const childNodes = parentNode.children;  //childNodes返回所有子节点包括元素节点，文本节点，属性节点
+  //可以使用children
+  rray.prototype.map.call(childNodes, itemNode => {deepLoopTagNode1(itemNode)})
 }
 deepLogTagNames(document.body)
 deepLogTagNames1(document.body)
 
 ```
+``` js
+// 简化版本
+function dfsDom(node) {
+    const childNodes = node.childNodes
+    for (let i = 0; i < childNodes.length; i++) {
+        const childNode = childNodes[i]
+        console.log(childNode.nodeName)
+        childNode.childNodes && dfsDom(childNode)
+    }
+}
+const root = document.documentElement
+dfsDom(root)
+```
 
 2. 广度优先
 ```js
-function	breadLogTagNames(root){
-  const	queue	=	[root];
-  while(queue.length)	{
-    const	currentNode	=	queue.shift();
-    const	{childNodes,	tagName}	=	currentNode;
-    tagName	&&	console.log(currentNode.tagName) 
-    //	过滤没有	tagName	的节点 ,遍历子节点然后将这一层级的所有点插入队列中处理
-    Array.prototype.filter.call(childNodes,	item=>item.tagName).forEach(itemNode=>{ queue.push(itemNode) })	
+function breadLogTagNames(root){
+  const queue = [root];
+  while(queue.length) {
+    const currentNode = queue.shift();
+    const {childNodes, tagName} = currentNode;
+    tagName && console.log(currentNode.tagName) 
+    // 过滤没有 tagName 的节点 ,遍历子节点然后将这一层级的所有点插入队列中处理
+    Array.prototype.filter.call(childNodes, item=>item.tagName).forEach(itemNode=>{ queue.push(itemNode) }) 
   }
 }
-breadLogTagNames(document.body)	
+breadLogTagNames(document.body) 
+```
+
+``` js
+// 简化版本
+function bfsDom(node) {
+    const queue = [node]
+    while (queue.length) {
+        const node = queue.shift()
+        console.log(node.nodeName)
+        node.childNodes && queue.push(...node.childNodes)
+    }
+}
+const root = document.documentElement
+bfsDom(root)
 ```
 
 3. TreeWalk版本
 ```js
-function	getChildTagNames(){ 
-  const	walker	=	document.createTreeWalker(document.body,	NodeFilter.SHOW_ELEMENT,	null,	false);
-  let	node; 
-  while(node	=	walker.nextNode()){ 
+function getChildTagNames(){ 
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, null, false);
+  let node; 
+  while(node = walker.nextNode()){ 
     if(node.tagName) console.log(node.tagName); 
   } 
 } 
@@ -2694,7 +2885,7 @@ let obj = {
   }
 }
 
-for(let	e of obj){console.log(e)};  // 0,1,2,3,4
+for(let e of obj){console.log(e)};  // 0,1,2,3,4
 [...obj];  //[0,1,2,3,4]
 let iterator = obj[Symbol.iterator]();
 iterator.next()  // {value: 0, done: false}
@@ -2734,9 +2925,9 @@ for (let val of obj) {console.log(val)};
 
 //遍历对象的值
 let obj = {
-    name:'zhangsan',
-    age:18,
-    sex:'man'
+  name:'zhangsan',
+  age:18,
+  sex:'man'
 }
 obj[Symbol.iterator]=function* (){
     for(var key in obj){
@@ -2745,14 +2936,14 @@ obj[Symbol.iterator]=function* (){
 }
 /**************优化写法****************/
 let obj = {
-	name:'haha',
-	age:18,
-	sex:'男',
-	[Symbol.iterator]:function* (){
-		for(let key in this){
-			yield this[key];
-		}
-	}
+  name:'haha',
+  age:18,
+  sex:'男',
+  [Symbol.iterator]:function* (){
+    for(let key in this){
+      yield this[key];
+    }
+  }
 }
 
 for(let value of obj){
@@ -2761,8 +2952,8 @@ for(let value of obj){
 console.log([...obj]);//["zhangsan", 18, "man"]
 
 //异步for await of
-function	sleep(duration)	{
-  return	new	Promise(function(resolve,	reject)	{
+function sleep(duration) {
+  return new Promise(function(resolve, reject) {
       //setTimeout(()=>{resolve()},duration)  下面的代码更简洁
       setTimeout(resolve,duration);
     })
@@ -2780,13 +2971,13 @@ for await(let e of foo()){
 
 /******************简化代码*********************/
 async function* foo(){
-	let i = 0;
-	while(i < 10){
-		await new Promise((resolve, reject) => {
-			setTimeout(resolve, 1000);
-		});
-		yield i++;
-	}
+ let i = 0;
+ while(i < 10){
+  await new Promise((resolve, reject) => {
+   setTimeout(resolve, 1000);
+  });
+  yield i++;
+ }
 }
 
 
@@ -2796,12 +2987,13 @@ async function* foo(){
 ## 为什么JavaScript里面typeof(null)的值是"object"？
 在JavaScript中，typeof null是'object'，它不正确地表明null是一个对象，这是一个错误，不幸的是无法修复，因为它会破坏现有的代码。我们来探讨这个bug的历史。   
 “typeof null”错误是JavaScript第一个版本的补遗。在这个版本中，值以32位为单位存储，其中包含一个小型标记（1-3位）和实际的数据值。类型标签存储在单元的低位中。其中有五个：   
+``` js
 *. 000：object        数据是对对象的引用。
 *. 1：int        数据是一个31位有符号整数。
 *. 010：double        数据是对双浮点数的引用。
 *. 100：string        数据是对字符串的引用。
 *. 110：boolean        数据是一个布尔值。
-
+```
 也就是说，最低位是一个，然后类型标签只有一个位长。或者它是零，那么类型标签的长度是三位，为四种类型提供两个附加位。  
 
 两个值是特殊的：
@@ -2842,14 +3034,12 @@ JS_PUBLIC_API(JSType)
     }
 ```
 代码的大致执行步骤：
-*. 在步骤（1）判断值 v 是否为 undefined(VOID)，这个检查通过下面的比较来判断：
+* 在步骤（1）判断值 v 是否为 undefined(VOID)，这个检查通过下面的比较来判断：
 ```js
   #define JSVAL_IS_VOID(v)  ((v) == JSVAL_VOID)
 ```
-*. 接下来，在步骤（2）判断值是否包含 object 标志，并且通过（3）判断值是否可以调用，或者（4）判断值是否在属性 [[Class]] 中被标记为函数，来判断值为函数，否则为对象。
-*. 接下来的步骤，依次判断是否为 number、 string 和 boolean 。
-
-在步骤（2）中 null 会被判断为 object，其实避免这个 bug 的方式很简单，在步骤（2）之前显示的检查值是否为 null . 这可以由以下C宏执行。：
+* 接下来，在步骤（2）判断值是否包含 object 标志，并且通过（3）判断值是否可以调用，或者（4）判断值是否在属性 [[Class]] 中被标记为函数，来判断值为函数，否则为对象。
+* 接下来的步骤，依次判断是否为 number、 string 和 boolean 。在步骤（2）中 null 会被判断为 object，其实避免这个 bug 的方式很简单，在步骤（2）之前显示的检查值是否为 null . 这可以由以下C宏执行。：
 ```js
   #define JSVAL_IS_NULL(v)  ((v) == JSVAL_NULL)
 ```
@@ -2857,6 +3047,7 @@ JS_PUBLIC_API(JSType)
 
 ##  instanceof能否判断基本数据类型？
 [MDN上关于hasInstance的解释](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance)
+
 instanceof的原理是基于原型链的查询，只要处于原型链中，判断永远为true; instanceof默认是无法判断基本数据类型的。但是我们可以通过改写Symbol.hasInstance属性来定义instanceof的行为
 ```js
 //其实就是自定义instanceof行为的一种方式，
@@ -2893,14 +3084,14 @@ console.log(myInstanceof(new String("111"), String));//true
 ---
 
 ## '==' 和 '===' 有什么区别？
-::: tip 
+::: tip 说明
 ===叫做严格相等，是指：左右两边不仅值要相等，类型也要相等，例如'1'===1的结果是false，因为一边是string，另一边是number。   
 '=='不像'==='那样严格，对于一般情况，只要值相等，就返回true，但==还涉及一些类型转换，它的转换规则如下：   
-*. 两边的类型是否相同，相同的话就比较值的大小，例如1==2，返回false   
-*. 判断的是否是null和undefined，是的话就返回true   
-*. 判断的类型是否是String和Number，是的话，把String类型转换成Number，再进行比较   
-*. 判断其中一方是否是Boolean，是的话就把Boolean转换成Number，再进行比较   
-*. 如果其中一方为Object，且另一方为String、Number或者Symbol，会将Object转换成字符串，再进行比较   
+* 两边的类型是否相同，相同的话就比较值的大小，例如1==2，返回false   
+* 判断的是否是null和undefined，是的话就返回true   
+* 判断的类型是否是String和Number，是的话，把String类型转换成Number，再进行比较   
+* 判断其中一方是否是Boolean，是的话就把Boolean转换成Number，再进行比较   
+* 如果其中一方为Object，且另一方为String、Number或者Symbol，会将Object转换成字符串，再进行比较   
 :::
 ---
 
@@ -2955,18 +3146,18 @@ console.log(a == 1 && a == 2);//true
 ## ==不同类型比较的规则
 类型不同的变量比较时==运算只有三条规则：
 1. undefined与null相等；
-2. 字符串和bool都转为数字再比较；
+2. 字符串和boolean都转为数字再比较；
 3. 对象转换成primitive类型再比较。
 
 这样我们就可以理解一些不太符合直觉的例子了，比如：   
-*. false	==	'0'	            //true    boolean vs string   
-*. true	==	'true'	          //false   boolean vs string   
-*. []	==	0	                  //true   
-*. []	==	false	              //true   
-*. []	==	null/undefined	              // false/false   
-*. var a = {},a == null/undefined/[]  // false/false/false   
-*. new	Boolean('false')	==	false	  //false    
-*. new	Boolean(false)	==	false     // true   
+* false	==	'0'	            //true    boolean vs string   
+* true	==	'true'	          //false   boolean vs string   
+* []	==	0	                  //true   
+* []	==	false	              //true   
+* []	==	null/undefined	              // false/false   
+* var a = {},a == null/undefined/[]  // false/false/false   
+* new	Boolean('false')	==	false	  //false    
+* new	Boolean(false)	==	false     // true   
 
 原始类型primitive type(5种):   
 1. number 数字(不分整型或浮点型)  
@@ -2980,7 +3171,7 @@ console.log(a == 1 && a == 2);//true
 二是对象如果转换成了primitive类型跟等号另一边类型恰好相同，则不需要转换成数字。  
 
 
-此外，==	的行为也经常跟<font color="red">if的行为（转换为boolean）</font>混淆。  
+此外，<font color="red">==	的行为</font>也经常跟<font color="red">if的行为（转换为boolean）</font>混淆。  
 if判断中[] {}都会判定为真，而null undefined 0 false都会判定为假
 
 ---
@@ -3006,7 +3197,7 @@ function is(x, y) {
 ## 为啥1.toString 、 {}.toString()会报错?
 [为啥{}.toString()会报错](https://segmentfault.com/q/1010000013373775)   
 [js中数字直接点方法会报错](https://www.cnblogs.com/stella1024/p/10573109.html)   
-js 引擎在执行时，遇到 {，至少有两种选择:   
+js 引擎在执行时，遇到 { 至少有两种选择:   
 1. 当做语句块的开始   
 2. 当做对象字面量表达式的开始   
 但是，默认情况下，是当做语句块的，所以{}.toString()会报错：<font color='red'>Unexpected token .</font>, 因为实际上浏览器执行的可能是这样：   
