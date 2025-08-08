@@ -324,7 +324,7 @@ Vue 实例有一个完整的生命周期，也就是从开始创建、初始化�
   beforeUpdate | 组件数据更新之前调用，发生在虚拟 DOM 打补丁之前
   update | 组件数据更新之后
   activited | keep-alive专属，组件被激活时调用
-  deadctivated | keep-alive专属，组件被销毁时调用
+  deactivated | keep-alive专属，组件被销毁时调用
   beforeDestory | 组件销毁前调用
   destoryed | 组件销毁后调用
 
