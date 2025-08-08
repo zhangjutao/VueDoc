@@ -1,6 +1,10 @@
 # CSS面试题
 ## 1物理像素的实现 (方案1)
 [1物理像素](https://segmentfault.com/a/1190000020431752?utm_source=tag-newest)
+
+::: tip 思路
+用js算出来当前手机端的dpr值，如果是2，则缩放为0.5,如果是3,则缩放为0.333，这样你写的px是1px，这个1px是相对单位，在dpr为2的时候相当于2个物理像素，在dpr为3的时候相当于3物理像素，但是由于缩放了视口，所以又变回了1物理像素
+:::
 ```html
 <html lang="en">
 
@@ -93,6 +97,9 @@ window.onload = function(){
 ```
 
 ## 1物理像素的实现 (方案3 使用伪元素)
+::: tip 思路
+使用媒体查询+-webkit-min-device-pixel-ratio属性
+:::
 ```html
 ...省略
 <style>
