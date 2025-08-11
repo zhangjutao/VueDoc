@@ -496,7 +496,7 @@ provide / inject API 主要解决了跨级组件间的通信问题，不过它�
    2. 改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化。
 
 * 主要包括以下几个模块：  
-   * tate：定义了应用状态的数据结构，可以在这里设置默认的初始状态。
+   * State：定义了应用状态的数据结构，可以在这里设置默认的初始状态。
    * Getter：允许组件从 Store 中获取数据，mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性。
    * Mutation：是唯一更改 store 中状态的方法，且必须是同步函数。
    * Action：用于提交 mutation，而不是直接变更状态，可以包含任意异步操作。
@@ -654,15 +654,18 @@ Vue 数据双向绑定主要是指：数据变化更新视图，视图变化更�
 
 Vue 主要通过以下 4 个步骤来实现数据双向绑定的：
 
-1. 实现一个监听器 Observer：对数据对象进行遍历，包括子属性对象的属性，利用 Object.defineProperty() 对属性都加上 setter 和 getter。这样的话，给这个对象的某个值赋值，就会触发 setter，那么就能监听到了数据变化。
+1. 实现一个<font color=red> 监听器 Observer</font>：对数据对象进行遍历，包括子属性对象的属性，利用 <font color=red> Object.defineProperty() </font>对属性都加上 setter 和 getter。这样的话，给这个对象的某个值赋值，就会<font color=red> 触发 setter</font>，那么就能监听到了数据变化。
 
-2. 实现一个解析器 Compile：解析 Vue 模板指令，将模板中的变量都替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，调用更新函数进行数据更新。
+2. 实现一个<font color=red> 订阅器 Dep</font>：订阅器采用 发布-订阅 设计模式，用来<font color=red>收集订阅者 Watcher</font>，对监听器 Observer 和 订阅者 Watcher 进行统一管理。
 
-3. 实现一个订阅者 Watcher：Watcher 订阅者是 Observer 和 Compile 之间通信的桥梁 ，主要的任务是订阅 Observer 中的属性值变化的消息，当收到属性值变化的消息时，触发解析器 Compile 中对应的更新函数。
+3. 实现一个<font color=red> 解析器 Compile</font>：解析 Vue 模板指令，将模板中的变量都替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，<font color=red>添加监听数据的订阅者 Watcher</font>，一旦数据有变动，收到通知，调用更新函数进行数据更新。
 
-4. 实现一个订阅器 Dep：订阅器采用 发布-订阅 设计模式，用来收集订阅者 Watcher，对监听器 Observer 和 订阅者 Watcher 进行统一管理。
+4. 实现一个<font color=red> 订阅者 Watcher</font>：<font color=red>Watcher 订阅者是 Observer 和 Compile 之间通信的桥梁</font>，主要的任务是订阅 Observer 中的属性值变化的消息，当收到属性值变化的消息时，<font color=red>触发解析器 Compile 中对应的更新函数</font>。
 
-以上四个步骤的流程图表示如下，如果有同学理解不大清晰的，可以查看作者专门介绍数据双向绑定的文章[《0 到 1 掌握：Vue 核心之数据双向绑定》](https://juejin.im/post/5d421bcf6fb9a06af23853f1)，有进行详细的讲解、以及代码 demo 示例。
+以上四个步骤的流程图表示如下:
+![ViewModel](./images/VueDataView.png)
+
+如果有理解不大清晰的，可以查看作者专门介绍数据双向绑定的文章[《0 到 1 掌握：Vue 核心之数据双向绑定》](https://juejin.im/post/5d421bcf6fb9a06af23853f1)，有进行详细的讲解、以及代码 demo 示例。
 [watcher-Dep.png](./images/watcher-Dep.png)
 
 ---
